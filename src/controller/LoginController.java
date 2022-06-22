@@ -42,16 +42,17 @@ public class LoginController {
     		msgErro.setText("Preencha todos os campos!");
     	} else {
     		boolean validaLogin = Usuario.validaUsuarioLogin(codigo, senha);
-    		if (validaLogin == true) {
+    		if (validaLogin == false) {
     			msgErro.setText("");
     			msgErro.setText("Login inválido! Tente novamente");
     			msgErro.setVisible(true);
-    		} else if (validaLogin == false) {
+    		} else if (validaLogin == true) {
     			Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 Scene scene = new Scene((Parent) root);
                 stage.setTitle("Menu Gerenciamento");
                 stage.setScene(scene);
+                stage.centerOnScreen();
                 stage.show();
     		}
     	}

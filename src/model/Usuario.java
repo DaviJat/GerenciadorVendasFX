@@ -16,7 +16,7 @@ public class Usuario {
 	private String codigo;
 	private String nome;
 	private String senha;
-	private boolean gerente;
+	private String gerente;
 	
 	private static ArrayList<Usuario> listaUsuario = new ArrayList<Usuario>();
 	
@@ -26,7 +26,7 @@ public class Usuario {
 	 * @param nome
 	 * @param gerente
 	 */
-	public Usuario(String codigo, String nome, String senha, boolean gerente) {
+	public Usuario(String codigo, String nome, String senha, String gerente) {
 		setCodigo(codigo);
 		setNome(nome);
 		setSenha(senha);
@@ -85,7 +85,7 @@ public class Usuario {
 	 * Getter do gerente
 	 * @return gerente
 	 */
-	public boolean getGerente() {
+	public String getGerente() {
 		return this.gerente;
 	}
 	
@@ -93,7 +93,7 @@ public class Usuario {
 	 * Setter gerente
 	 * @param gerente
 	 */
-	public void setGerente(boolean gerente) {
+	public void setGerente(String gerente) {
 		this.gerente = gerente;
 	}
 	
@@ -149,10 +149,10 @@ public class Usuario {
 		if (i != -1) {
 			switch (novoCargo) {
 			case "1": 
-				getListaUsuario().get(i).setGerente(true);
+				//getListaUsuario().get(i).setGerente(true);
 				break;
 			case "2":
-				getListaUsuario().get(i).setGerente(false);
+				//getListaUsuario().get(i).setGerente(false);
 				break;
 			}
 		}
