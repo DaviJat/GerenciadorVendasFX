@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,6 +23,9 @@ public class UsuarioExclusaoController {
 
     @FXML
     private Label labelCodigo;
+    
+    @FXML
+    private TextField inputNomeUsuario;
 
     @FXML
     private Label msgErro;
@@ -50,9 +55,16 @@ public class UsuarioExclusaoController {
     		
     		msgErro.setText("");
     		
+    		ArrayList<Usuario> listaUsuarios = Usuario.getListaUsuario();
+    		
+    		int index = Usuario.buscaUsuario(codigo);
+    		
+    		inputNomeUsuario.setText(listaUsuarios.get(index).getNome());
+    		
     		inputCodigoExclusao.setDisable(true);
     		labelCodigo.setDisable(true);
     		btnPesquisaCodigoUsuario.setDisable(true);
+    		btnExcluir.setDisable(false);
     		
     	} else {
     		

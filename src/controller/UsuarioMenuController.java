@@ -81,8 +81,14 @@ public class UsuarioMenuController{
     }
 
     @FXML
-    void excluirUsuario(ActionEvent event) {
-
+    void excluirUsuario(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/UsuarioExclusaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Exclusão");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
     
     @FXML
