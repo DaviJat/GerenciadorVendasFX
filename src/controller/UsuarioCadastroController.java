@@ -48,9 +48,9 @@ public class UsuarioCadastroController {
     	
 		String nome = inputUsuarioCadastro.getText();
 		String senha = inputSenhaCadastro.getText();
-		String gerente = selectCargoUsuario.getSelectionModel().getSelectedItem();
+		String cargo = selectCargoUsuario.getSelectionModel().getSelectedItem();
 	    
-	    if (nome == "" || senha == "" || gerente == "") {
+	    if (nome == "" || senha == "" || cargo == null) {
 	    	
     		msgErro.setText("");
     		msgErro.setText("Preencha todos os campos!");
@@ -60,7 +60,7 @@ public class UsuarioCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Usuario novoUsuario = new Usuario(codigo, nome, senha, gerente);
+    		Usuario novoUsuario = new Usuario(codigo, nome, senha, cargo);
     		Usuario.cadastrar(novoUsuario);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();

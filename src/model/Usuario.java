@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Classe para instanciar objetos do tipo Usuario, e realizar as funções de
@@ -16,7 +15,7 @@ public class Usuario {
 	private String codigo;
 	private String nome;
 	private String senha;
-	private String gerente;
+	private String cargo;
 	
 	private static ArrayList<Usuario> listaUsuario = new ArrayList<Usuario>();
 	
@@ -24,13 +23,13 @@ public class Usuario {
 	 * Construtor do objeto da Classe Usuario
 	 * @param codigo
 	 * @param nome
-	 * @param gerente
+	 * @param cargo
 	 */
-	public Usuario(String codigo, String nome, String senha, String gerente) {
+	public Usuario(String codigo, String nome, String senha, String cargo) {
 		setCodigo(codigo);
 		setNome(nome);
 		setSenha(senha);
-		setGerente(gerente);
+		setCargo(cargo);
 	}
 	
 	/**
@@ -82,19 +81,19 @@ public class Usuario {
 	}
 	
 	/**
-	 * Getter do gerente
-	 * @return gerente
+	 * Getter do cargo
+	 * @return cargo
 	 */
-	public String getGerente() {
-		return this.gerente;
+	public String getCargo() {
+		return this.cargo;
 	}
 	
 	/**
-	 * Setter gerente
-	 * @param gerente
+	 * Setter cargo
+	 * @param cargo
 	 */
-	public void setGerente(String gerente) {
-		this.gerente = gerente;
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 	
 	/**
@@ -124,37 +123,20 @@ public class Usuario {
 	}
 	
 	/**
-	 * Recebe o codigo do Usuário e o novo nome, e edita no objeto da lista
+	 * Recebe o codigo do Usuário e os novos dados, e edita no objeto da lista
 	 * @param codigoString
 	 * @param novoNome
+	 * @param novaSenha
+	 * @param novoCargo
 	 */
-	public static void editarNome(String codigoString, String novoNome) {
+	public static void editar(String codigoString, String novoNome, String novaSenha, String novoCargo) {
 		
 		int i = buscaUsuario(codigoString); 
 		
 		if (i != -1) {
 			getListaUsuario().get(i).setNome(novoNome);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Usuário e o novo cargo, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoCargo
-	 */
-	public static void editarCargo(String codigoString, String novoCargo) {
-		
-		int i = buscaUsuario(codigoString); 
-		
-		if (i != -1) {
-			switch (novoCargo) {
-			case "1": 
-				//getListaUsuario().get(i).setGerente(true);
-				break;
-			case "2":
-				//getListaUsuario().get(i).setGerente(false);
-				break;
-			}
+			getListaUsuario().get(i).setSenha(novaSenha);
+			getListaUsuario().get(i).setCargo(novoCargo);
 		}
 	}
 	
@@ -179,7 +161,7 @@ public class Usuario {
             System.out.println(
             		usuario.getCodigo() + "      / " + 
             		usuario.getNome() + " / " +
-            		usuario.getGerente());
+            		usuario.getCargo());
         }
 	}
 	
@@ -204,27 +186,19 @@ public class Usuario {
 	 * Loop que verifica se foi encontrado um usuário com o código digitado
 	 * @return 
 	 */
-	public static String validaUsuario() {
-		String codigoUsuario = null;
-		
-		@SuppressWarnings("resource")
-		Scanner entradaUsuario = new Scanner(System.in);
+	public static boolean validaUsuario(String codigoUsuario) {
 		
 		boolean validaUsuario = false;
 		
-		while (validaUsuario == false) {
-			System.out.println("Código do Usuário: ");
-			codigoUsuario = entradaUsuario.nextLine();
-			int resultadoBusca = Usuario.buscaUsuario(codigoUsuario);
-			if (resultadoBusca == -1) {
-				System.out.println("Usuario Não Cadastrado: ");
-			} else {
-				validaUsuario = true;
-			}
+		int resultadoBusca = Usuario.buscaUsuario(codigoUsuario);
+		
+		if (resultadoBusca == -1) {
+			validaUsuario = false;
+		} else {
+			validaUsuario = true;
 		}
 		
-		return codigoUsuario;
-		
+		return validaUsuario;
 	}
 	
 	/**

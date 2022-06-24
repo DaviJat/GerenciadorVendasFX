@@ -7,12 +7,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="telaUsuario" prefHeight="400.0" prefWidth="379.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioMenuController">
+<Pane prefHeight="425.0" prefWidth="379.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioMenuController">
    <children>
-      <TableView layoutY="114.0" prefHeight="286.0" prefWidth="379.0">
+      <TableView fx:id="tabelaUsuarios" layoutY="114.0" prefHeight="263.0" prefWidth="379.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colunaCodigo" prefWidth="98.39996182918549" text="Código" />
+            <TableColumn fx:id="colunaNome" prefWidth="180.80005645751953" text="Nome do Usuário" />
+            <TableColumn fx:id="colunaCargo" prefWidth="97.5999755859375" text="Cargo" />
          </columns>
       </TableView>
       <Button fx:id="btnCadastrarUsuario" layoutX="14.0" layoutY="67.0" mnemonicParsing="false" onAction="#cadastrarUsuario" prefHeight="28.0" prefWidth="79.0" text="Cadastrar" />
@@ -23,6 +24,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnVoltar" layoutX="286.0" layoutY="67.0" mnemonicParsing="false" onAction="#bntVoltar" prefHeight="28.0" prefWidth="79.0" text="Voltar" />
+      <Button fx:id="btnVoltar" layoutX="306.0" layoutY="388.0" mnemonicParsing="false" onAction="#bntVoltar" prefHeight="18.0" prefWidth="55.0" text="Voltar" />
+      <Button fx:id="btnAtualizaLista" layoutX="285.0" layoutY="67.0" mnemonicParsing="false" onAction="#atualizarLista" prefHeight="28.0" prefWidth="79.0" text="Atualizar" />
    </children>
 </Pane>

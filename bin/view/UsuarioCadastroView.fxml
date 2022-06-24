@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioCadastroController">
    <children>
-      <Label layoutX="40.0" layoutY="72.0" text="Usuário:" />
+      <Label layoutX="40.0" layoutY="72.0" text="Nome do Usuário:" />
       <TextField fx:id="inputUsuarioCadastro" layoutX="35.0" layoutY="89.0" prefHeight="34.0" prefWidth="174.0" />
       <Label layoutX="40.0" layoutY="132.0" text="Senha:" />
       <Button fx:id="btnSalvar" layoutX="78.0" layoutY="254.0" mnemonicParsing="false" onAction="#salvaCadastroUsuario" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
