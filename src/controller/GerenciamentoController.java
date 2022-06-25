@@ -39,11 +39,22 @@ public class GerenciamentoController {
 
     
     @FXML
-    void menuUsuarios(ActionEvent event) throws IOException {
+    void abrirMenuUsuarios(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/UsuarioMenuView.fxml"));
     	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene((Parent) root);
         stage.setTitle("Menu Usuário");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+    
+    @FXML
+    void abrirMenuFornecedores(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorMenuView.fxml"));
+    	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Menu Fornecedores");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

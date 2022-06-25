@@ -19,8 +19,8 @@
             <Button fx:id="btnClientes" layoutX="114.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Clientes" />
             <Button fx:id="btnProdutos" layoutX="16.0" layoutY="193.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Produtos" />
             <Button fx:id="btnItens" layoutX="114.0" layoutY="193.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Itens" />
-            <Button fx:id="btnFornecedores" layoutX="114.0" layoutY="148.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Fornecedores" />
-            <Button fx:id="btnUsuarios" layoutX="16.0" layoutY="148.0" mnemonicParsing="false" onAction="#menuUsuarios" prefHeight="35.0" prefWidth="90.0" text="Usuários" />
+            <Button fx:id="btnFornecedores" layoutX="114.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuFornecedores" prefHeight="35.0" prefWidth="90.0" text="Fornecedores" />
+            <Button fx:id="btnUsuarios" layoutX="16.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuUsuarios" prefHeight="35.0" prefWidth="90.0" text="Usuários" />
             <Label alignment="CENTER" layoutY="38.0" prefHeight="17.0" prefWidth="220.0" text="Menu" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
