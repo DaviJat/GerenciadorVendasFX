@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -76,8 +77,14 @@ public class FornecedorMenuController {
     }
 
     @FXML
-    void bntVoltar(ActionEvent event) {
-
+    void bntVoltar(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Menu Gerenciamento");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML
@@ -96,15 +103,21 @@ public class FornecedorMenuController {
     	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorEdicaoView.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene((Parent) root);
-        stage.setTitle("Cadastro");
+        stage.setTitle("Edição");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
     }
 
     @FXML
-    void excluirFornecedor(ActionEvent event) {
-
+    void excluirFornecedor(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorExclusaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Exclusão");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
 }

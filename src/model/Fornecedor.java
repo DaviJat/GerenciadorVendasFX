@@ -122,43 +122,17 @@ public class Fornecedor {
 	}
 	
 	/**
-	 * Recebe o codigo do Fornecedor e o novo nome, e edita no objeto da lista
+	 * Recebe o codigo do Fornecedor e os novos dados, e edita no objeto da lista
 	 * @param codigoString
 	 * @param novoNome
 	 */
-	public static void editarNome(String codigoString, String novoNome) {
+	public static void editar(String codigoString, String novoNome, String novoCnpj, String novoEndereco) {
 		
 		int i = buscaFornecedor(codigoString);
 		
 		if (i != -1) {
 			listaFornecedor.get(i).setNome(novoNome);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Fornecedor e o novo cnpj, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoCnpj
-	 */
-	public static void editarCnpj(String codigoString, String novoCnpj) {
-		
-		int i = buscaFornecedor(codigoString);
-		
-		if (i != -1) {
 			listaFornecedor.get(i).setCnpj(novoCnpj);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Fornecedor e o novo Endereco, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoEndereco
-	 */
-	public static void editarEndereco(String codigoString, String novoEndereco) {
-		
-		int i = buscaFornecedor(codigoString);
-		
-		if (i != -1) {
 			listaFornecedor.get(i).setEndereco(novoEndereco);
 		}
 	}

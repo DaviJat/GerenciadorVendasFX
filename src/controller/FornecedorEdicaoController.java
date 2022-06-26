@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Fornecedor;
 
 public class FornecedorEdicaoController {
@@ -86,7 +87,34 @@ public class FornecedorEdicaoController {
     }
 
     @FXML
-    void salvaEdicaoUsuario(ActionEvent event) {
+    void salvaEdicaoFornecedor(ActionEvent event) {
+    	
+    		if (inputCodigoEdicao.getText() != "") {
+    		
+    		String codigo = inputCodigoEdicao.getText();
+	    	String nome = inputFornecedorEdicao.getText();
+			String cnpj = inputCnpjEdicao.getText();
+			String endereco = inputCnpjEdicao.getText();
+		    
+		    if (nome == "" || cnpj == "" || endereco == null) {
+		    	
+	    		msgErro.setText("");
+	    		msgErro.setText("Preencha todos os campos!");
+	    		
+	    	} else {
+	    		
+	    		Fornecedor.editar(codigo, nome, cnpj, endereco);
+	    		
+	    		Stage stage = (Stage)btnSalvar.getScene().getWindow();
+	    	    stage.close();
+	    	    
+	    	}
+    	} else {
+    		
+    		msgErro.setText("");
+    		msgErro.setText("Digite o código do Fornecedor!");
+    		
+    	}
 
     }
 
