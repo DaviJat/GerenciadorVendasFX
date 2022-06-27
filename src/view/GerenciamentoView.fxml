@@ -17,7 +17,7 @@
             <Button fx:id="btnSair" layoutX="157.0" layoutY="357.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="43.0" text="Sair" />
             <Button fx:id="btnVendas" layoutX="16.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Vendas" />
             <Button fx:id="btnClientes" layoutX="114.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Clientes" />
-            <Button fx:id="btnProdutos" layoutX="16.0" layoutY="193.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Produtos" />
+            <Button fx:id="btnProdutos" layoutX="16.0" layoutY="193.0" mnemonicParsing="false" onAction="#abrirMenuProdutos" prefHeight="35.0" prefWidth="90.0" text="Produtos" />
             <Button fx:id="btnItens" layoutX="114.0" layoutY="193.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Itens" />
             <Button fx:id="btnFornecedores" layoutX="114.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuFornecedores" prefHeight="35.0" prefWidth="90.0" text="Fornecedores" />
             <Button fx:id="btnUsuarios" layoutX="16.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuUsuarios" prefHeight="35.0" prefWidth="90.0" text="Usuários" />

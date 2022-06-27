@@ -151,19 +151,6 @@ public class Fornecedor {
 	}
 	
 	/**
-	 * Printa a lista de Fornecedors
-	 */
-	public static void listar() {
-		for (Fornecedor fornecedor : listaFornecedor) {
-            
-            System.out.println("| Codigo: "       + fornecedor.getCodigo()+  
-			 				   " | Nome: "      + fornecedor.getNome() +  
-			 				   " | CNPJ: "      + fornecedor.getCnpj() +  
-			 				   " | Endereço: "  + fornecedor.getEndereco());
-        }
-	}
-	
-	/**
 	 * Recebe um código de Fornecedor e encontra o index do objeto com esse código,
 	 * na lista
 	 * @param codigo

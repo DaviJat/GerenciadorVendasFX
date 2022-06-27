@@ -32,7 +32,7 @@ public class FornecedorCadastroController {
     private Label msgErro;
 
     @FXML
-    void salvaCadastroUsuario(ActionEvent event) {
+    void salvaCadastroFornecedor(ActionEvent event) {
     	
     	String nome = inputFornecedorCadastro.getText();
 		String cnpj = inputCNPJCadastro.getText();

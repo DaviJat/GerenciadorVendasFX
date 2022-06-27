@@ -154,18 +154,6 @@ public class Usuario {
 	}
 	
 	/**
-	 * Printa a lista de Usuários
-	 */
-	public static void listar() {
-		for (Usuario usuario : getListaUsuario()) {
-            System.out.println(
-            		usuario.getCodigo() + "      / " + 
-            		usuario.getNome() + " / " +
-            		usuario.getCargo());
-        }
-	}
-	
-	/**
 	 * Recebe um código de usuário e encontra o index do objeto com esse código,
 	 * na lista
 	 * @param codigo
