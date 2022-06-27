@@ -32,8 +32,8 @@
       </Label>
       <TextField fx:id="inputValidadeCadastro" layoutX="45.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
       <TextField fx:id="inputEstoqueCadastro" layoutX="279.0" layoutY="89.0" prefHeight="34.0" prefWidth="204.0" />
-      <TextField fx:id="inputCodigoFornecedor" layoutX="279.0" layoutY="149.0" prefHeight="34.0" prefWidth="170.0" />
-      <TextField fx:id="inputNomeFornecedor" editable="false" layoutX="279.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
+      <TextField fx:id="inputCodigoFornecedorCadastro" layoutX="279.0" layoutY="149.0" prefHeight="34.0" prefWidth="170.0" />
+      <TextField fx:id="inputNomeFornecedorCadastro" editable="false" layoutX="279.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
       <Label layoutX="282.0" layoutY="72.0" text="Estoque (kg):" />
       <Label fx:id="labelCodigoFornecedor" layoutX="282.0" layoutY="132.0" text="Código Fornecedor:" />
       <Label fx:id="labelNomeFornecedor" layoutX="282.0" layoutY="192.0" text="Nome Fornecedor:" />

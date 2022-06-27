@@ -89,7 +89,7 @@ public class FornecedorEdicaoController {
     @FXML
     void salvaEdicaoFornecedor(ActionEvent event) {
     	
-    		if (inputCodigoEdicao.getText() != "") {
+    	if (inputCodigoEdicao.getText() != "") {
     		
     		String codigo = inputCodigoEdicao.getText();
 	    	String nome = inputFornecedorEdicao.getText();

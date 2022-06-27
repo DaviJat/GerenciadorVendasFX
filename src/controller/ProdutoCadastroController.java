@@ -27,13 +27,13 @@ public class ProdutoCadastroController {
     private Button btnSalvar;
 
     @FXML
-    private TextField inputCodigoFornecedor;
+    private TextField inputCodigoFornecedorCadastro;
 
     @FXML
     private TextField inputEstoqueCadastro;
 
     @FXML
-    private TextField inputNomeFornecedor;
+    private TextField inputNomeFornecedorCadastro;
 
     @FXML
     private TextField inputPrecoCadastro;
@@ -68,7 +68,7 @@ public class ProdutoCadastroController {
     @FXML
     void pesquisarCodigoFornecedor(ActionEvent event) {
     	
-    	String codigoFornecedor = inputCodigoFornecedor.getText();
+    	String codigoFornecedor = inputCodigoFornecedorCadastro.getText();
     	
     	if (Fornecedor.validaFornecedor(codigoFornecedor)) {
     		
@@ -78,10 +78,10 @@ public class ProdutoCadastroController {
     		
     		int index = Fornecedor.buscaFornecedor(codigoFornecedor);
     		
-    		inputNomeFornecedor.setText(listaFornecedores.get(index).getNome());
+    		inputNomeFornecedorCadastro.setText(listaFornecedores.get(index).getNome());
     		
     	} else {
-    		inputNomeFornecedor.setText("");
+    		inputNomeFornecedorCadastro.setText("");
     		msgErroFornecedor.setText("Código Inválido");
     	}
     	 
@@ -94,7 +94,7 @@ public class ProdutoCadastroController {
 		String preco = inputPrecoCadastro.getText();
 		String validade = inputValidadeCadastro.getText();
 		String estoque = inputEstoqueCadastro.getText();
-		String nomeFornecedor = inputNomeFornecedor.getText();
+		String nomeFornecedor = inputNomeFornecedorCadastro.getText();
 		
 		double precoFormatado = Geral.validaDouble(preco);
 		double estoqueFormatado = Geral.validaDouble(estoque);

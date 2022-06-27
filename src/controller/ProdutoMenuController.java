@@ -104,8 +104,14 @@ public class ProdutoMenuController {
     }
 
     @FXML
-    void editarProduto(ActionEvent event) {
-
+    void editarProduto(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/ProdutoEdicaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Edição");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML

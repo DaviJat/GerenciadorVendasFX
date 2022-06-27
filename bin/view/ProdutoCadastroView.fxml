@@ -12,7 +12,7 @@
    <children>
       <Label layoutX="48.0" layoutY="72.0" text="Nome do Produto:" />
       <TextField fx:id="inputProdutoCadastro" layoutX="45.0" layoutY="89.0" prefHeight="34.0" prefWidth="204.0" />
-      <Label layoutX="48.0" layoutY="132.0" text="Preço (R$):" />
+      <Label layoutX="48.0" layoutY="132.0" text="Preço (R$/kg):" />
       <Button fx:id="btnSalvar" layoutX="221.0" layoutY="260.0" mnemonicParsing="false" onAction="#salvaCadastroProduto" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -32,9 +32,9 @@
       </Label>
       <TextField fx:id="inputValidadeCadastro" layoutX="45.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
       <TextField fx:id="inputEstoqueCadastro" layoutX="279.0" layoutY="89.0" prefHeight="34.0" prefWidth="204.0" />
-      <TextField fx:id="inputCodigoFornecedor" layoutX="279.0" layoutY="149.0" prefHeight="34.0" prefWidth="170.0" />
-      <TextField fx:id="inputNomeFornecedor" editable="false" layoutX="279.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
-      <Label layoutX="282.0" layoutY="72.0" text="Estoque (gramas):" />
+      <TextField fx:id="inputCodigoFornecedorCadastro" layoutX="279.0" layoutY="149.0" prefHeight="34.0" prefWidth="170.0" />
+      <TextField fx:id="inputNomeFornecedorCadastro" editable="false" layoutX="279.0" layoutY="209.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label layoutX="282.0" layoutY="72.0" text="Estoque (kg):" />
       <Label fx:id="labelCodigoFornecedor" layoutX="282.0" layoutY="132.0" text="Código Fornecedor:" />
       <Label fx:id="labelNomeFornecedor" layoutX="282.0" layoutY="192.0" text="Nome Fornecedor:" />
       <Button fx:id="btnPesquisaCodigoFornecedor" layoutX="449.0" layoutY="149.0" mnemonicParsing="false" onAction="#pesquisarCodigoFornecedor" prefHeight="34.0" prefWidth="34.0">

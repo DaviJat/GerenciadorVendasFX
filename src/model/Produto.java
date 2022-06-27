@@ -169,75 +169,19 @@ public class Produto {
 	}
 	
 	/**
-	 * Recebe o codigo do Produto e o novo nome, e edita no objeto da lista
+	 * Recebe o codigo do Produto e os novos dados, e edita no objeto da lista
 	 * @param codigoString
 	 * @param novoNome
 	 */
-	public static void editarNome(String codigoString, String novoNome) {
+	public static void editar(String codigoString, String novoNome, double novoPreco, String novaValidade, double novoEstoque, String novoFornecedor) {
 		
 		int i = buscaProduto(codigoString); 
 		
 		if (i != -1) {
 			listaProduto.get(i).setNome(novoNome);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Produto e o novo preco, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoPreco
-	 */
-	public static void editarPreco(String codigoString, String novoPrecoString) {
-		
-		double novoPreco = Double.parseDouble(novoPrecoString);
-		
-		int i = buscaProduto(codigoString); 
-		
-		if (i != -1) {
 			listaProduto.get(i).setPreco(novoPreco);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Produto e a nova validade, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novaValidade
-	 */
-	public static void editarValidade(String codigoString, String novaValidade) {
-		
-		int i = buscaProduto(codigoString); 
-		
-		if (i != -1) {
 			listaProduto.get(i).setValidade(novaValidade);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Produto e a nova quantidade do estoque, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoEstoque
-	 */
-	public static void editarEstoque(String codigoString, String novoEstoqueString) {
-		
-		double novoEstoque = Double.parseDouble(novoEstoqueString);
-		
-		int i = buscaProduto(codigoString); 
-		
-		if (i != -1) {
 			listaProduto.get(i).setEstoque(novoEstoque);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Produto e o novo fornecedor, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoFornecedor
-	 */
-	public static void editarFornecedor(String codigoString, String novoFornecedor) {
-		
-		int i = buscaProduto(codigoString); 
-		
-		if (i != -1) {
 			listaProduto.get(i).setNomeFornecedor(novoFornecedor);
 		}
 	}

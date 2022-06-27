@@ -13,10 +13,10 @@
          <columns>
             <TableColumn fx:id="colunaCodigo" prefWidth="49.59997481107712" text="Código" />
             <TableColumn fx:id="colunaNome" prefWidth="143.20001602172852" text="Nome do Produto" />
-            <TableColumn fx:id="colunaPreco" prefWidth="79.19999694824219" text="Preço (R$)" />
-            <TableColumn fx:id="colunaValidade" prefWidth="82.4000244140625" text="Validade" />
-            <TableColumn fx:id="colunaEstoque" prefWidth="73.60003662109375" text="Estoque (g)" />
-            <TableColumn fx:id="colunaFornecedor" prefWidth="116.79986572265625" text="Fornecedor" />
+            <TableColumn fx:id="colunaPreco" prefWidth="92.80000305175781" text="Preço (R$/kg)" />
+            <TableColumn fx:id="colunaValidade" prefWidth="69.5999755859375" text="Validade" />
+            <TableColumn fx:id="colunaEstoque" prefWidth="86.39996337890625" text="Estoque (kg)" />
+            <TableColumn fx:id="colunaFornecedor" prefWidth="104.800048828125" text="Fornecedor" />
          </columns>
       </TableView>
       <Button fx:id="btnCadastrarProduto" layoutX="80.0" layoutY="67.0" mnemonicParsing="false" onAction="#cadastrarProduto" prefHeight="28.0" prefWidth="79.0" text="Cadastrar" />
