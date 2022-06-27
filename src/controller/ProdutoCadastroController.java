@@ -14,7 +14,7 @@ import model.Produto;
 
 public class ProdutoCadastroController {
 	
-	static int contadorCodigo = 0;
+	static int contadorCodigo = 2;
 	
 	public static void geraCodigo() {
 		contadorCodigo ++;

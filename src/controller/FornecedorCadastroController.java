@@ -10,7 +10,7 @@ import model.Fornecedor;
 
 public class FornecedorCadastroController {
 	
-	static int contadorCodigo = 0;
+	static int contadorCodigo = 2;
 	
 	public static void geraCodigo() {
 		contadorCodigo ++;

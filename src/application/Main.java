@@ -16,6 +16,8 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import model.Fornecedor;
+import model.Produto;
 import model.Usuario;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +29,18 @@ public class Main extends Application {
 		
 		Usuario novoUsuario = new Usuario("1", "Administrador", "adm", "Administrador");
 		Usuario.cadastrar(novoUsuario);
+		
+		Fornecedor novoFornecedor = new Fornecedor("1", "Piracanjuba", "88888888", "Rua Argentina");
+		Fornecedor.cadastrar(novoFornecedor);
+		
+		Fornecedor novoFornecedor2 = new Fornecedor("2", "Sadia", "99999999", "Rua Brasil");
+		Fornecedor.cadastrar(novoFornecedor2);
+		
+		Produto novoProduto = new Produto("1", "Queijo", 30.0, "10/10/2022", 1000.00, "Piracanjuba");
+		Produto.cadastrar(novoProduto);
+		
+		Produto novoProduto2 = new Produto("2", "Presunto", 20.0, "10/10/2022", 500.00, "Sadia");
+		Produto.cadastrar(novoProduto2);
 			
 		FXMLLoader fxmlload = new FXMLLoader(getClass().getResource("/view/LoginView.fxml"));
 
