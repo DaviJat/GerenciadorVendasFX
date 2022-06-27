@@ -96,7 +96,7 @@ public class FornecedorEdicaoController {
 			String cnpj = inputCnpjEdicao.getText();
 			String endereco = inputCnpjEdicao.getText();
 		    
-		    if (nome == "" || cnpj == "" || endereco == null) {
+		    if (nome == "" || cnpj == "" || endereco == "") {
 		    	
 	    		msgErro.setText("");
 	    		msgErro.setText("Preencha todos os campos!");
