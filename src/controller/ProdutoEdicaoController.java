@@ -107,7 +107,7 @@ public class ProdutoEdicaoController {
     	
     	String codigo = inputCodigoProdutoEdicao.getText();
     	
-    	if (Fornecedor.validaFornecedor(codigo)) {
+    	if (Produto.validaProduto(codigo)) {
     		
     		msgErro.setText("");
     		
