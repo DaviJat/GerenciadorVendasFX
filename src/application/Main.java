@@ -36,10 +36,10 @@ public class Main extends Application {
 		Fornecedor novoFornecedor2 = new Fornecedor("2", "Sadia", "99999999", "Rua Brasil");
 		Fornecedor.cadastrar(novoFornecedor2);
 		
-		Produto novoProduto = new Produto("1", "Queijo", 30.0, "10/10/2022", 1000.00, "Piracanjuba");
+		Produto novoProduto = new Produto("1", "Queijo", 30.0, "10/10/2022", 10.00, "Piracanjuba");
 		Produto.cadastrar(novoProduto);
 		
-		Produto novoProduto2 = new Produto("2", "Presunto", 20.0, "10/10/2022", 500.00, "Sadia");
+		Produto novoProduto2 = new Produto("2", "Presunto", 20.0, "10/10/2022", 5.50, "Sadia");
 		Produto.cadastrar(novoProduto2);
 			
 		FXMLLoader fxmlload = new FXMLLoader(getClass().getResource("/view/LoginView.fxml"));
