@@ -7,13 +7,21 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Geral;
+import model.Item;
 import model.Produto;
 
 public class ItemCadastroController {
 	
 	ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 	ArrayList<String> listaQuantidades = new ArrayList<String>();
+	
+	static int contadorCodigo = 0;
+	
+	public static void geraCodigo() {
+		contadorCodigo ++;
+	}
 
 	@FXML
     private Button btnAdicionarProduto;
@@ -59,7 +67,12 @@ public class ItemCadastroController {
 
     @FXML
     private Label msgErroQuantidade;
-
+    
+    @FXML
+    public void initialize() {
+        listaProdutos.clear();
+        listaQuantidades.clear();
+    }
 
     @FXML
     void adicionarProduto(ActionEvent event) {
@@ -137,6 +150,47 @@ public class ItemCadastroController {
 
     @FXML
     void salvaCadastroItem(ActionEvent event) {
+    	
+    	String nome = inputItemCadastro.getText();
+		String preco = inputPrecoCadastro.getText();
+		String descricao = inputDescricaoCadastro.getText();
+		String categoria = inputCategoriaCadastro.getText();
+		
+		double precoFormatado = Geral.validaDouble(preco);
+	    
+    	if (precoFormatado < 0) {
+    		
+    		msgErro.setText("");
+    		msgErroPreco.setText("");
+    		msgErroQuantidade.setText("");
+    		msgErroProduto.setText("");
+    		msgErroPreco.setText("Valor Inválido");
+    		
+    	} else if (nome == "" || preco == "" || descricao == "" || categoria == "" || listaProdutos.isEmpty()) {
+	    	
+    		msgErro.setText("");
+    		msgErroPreco.setText("");
+    		msgErroQuantidade.setText("");
+    		msgErroProduto.setText("");
+    		
+    		if (listaProdutos.isEmpty()) {
+    			msgErro.setText("Insira pelo menos um produto!");
+    		} else {
+    			msgErro.setText("Preencha todos os campos!");
+    		}
+    		
+    	}  else {
+    		
+    		geraCodigo();
+    		String codigo = Integer.toString(contadorCodigo);
+    		
+    		Item novoItem = new Item(codigo, nome, precoFormatado, descricao, categoria, listaProdutos, listaQuantidades);
+    		Item.cadastrar(novoItem);
+    		
+    		Stage stage = (Stage)btnSalvar.getScene().getWindow();
+    	    stage.close();
+    	    
+    	}
 
     }
 
