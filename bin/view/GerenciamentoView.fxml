@@ -13,12 +13,12 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="220.0" style="-fx-background-color: #2B59BD;">
          <children>
-            <Button fx:id="btnRelatorios" layoutX="20.0" layoutY="300.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" text="Relatórios" />
-            <Button fx:id="btnSair" layoutX="157.0" layoutY="357.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="43.0" text="Sair" />
-            <Button fx:id="btnVendas" layoutX="16.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Vendas" />
-            <Button fx:id="btnClientes" layoutX="114.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Clientes" />
+            <Button fx:id="btnRelatorios" layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#abrirMenuRelatorios" prefHeight="35.0" prefWidth="180.0" text="Relatórios" />
+            <Button fx:id="btnSair" layoutX="157.0" layoutY="357.0" mnemonicParsing="false" onAction="#sair" prefHeight="19.0" prefWidth="43.0" text="Sair" />
+            <Button fx:id="btnVendas" layoutX="16.0" layoutY="238.0" mnemonicParsing="false" onAction="#abrirMenuVendas" prefHeight="35.0" prefWidth="90.0" text="Vendas" />
+            <Button fx:id="btnClientes" layoutX="114.0" layoutY="238.0" mnemonicParsing="false" onAction="#abrirMenuClientes" prefHeight="35.0" prefWidth="90.0" text="Clientes" />
             <Button fx:id="btnProdutos" layoutX="16.0" layoutY="193.0" mnemonicParsing="false" onAction="#abrirMenuProdutos" prefHeight="35.0" prefWidth="90.0" text="Produtos" />
-            <Button fx:id="btnItens" layoutX="114.0" layoutY="193.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Itens" />
+            <Button fx:id="btnItens" layoutX="114.0" layoutY="193.0" mnemonicParsing="false" onAction="#abrirMenuItens" prefHeight="35.0" prefWidth="90.0" text="Itens" />
             <Button fx:id="btnFornecedores" layoutX="114.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuFornecedores" prefHeight="35.0" prefWidth="90.0" text="Fornecedores" />
             <Button fx:id="btnUsuarios" layoutX="16.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirMenuUsuarios" prefHeight="35.0" prefWidth="90.0" text="Usuários" />
             <Label alignment="CENTER" layoutY="38.0" prefHeight="17.0" prefWidth="220.0" text="Menu" textFill="WHITE">

@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Classe para instanciar objetos do tipo Item, e realizar as funções de
@@ -325,26 +324,19 @@ public class Item {
 	 * Loop que verifica se foi encontrado um item com o código digitado
 	 * @return 
 	 */
-	public static String validaItem() {
-		String codigoItem = null;
-		
-		@SuppressWarnings("resource")
-		Scanner entradaItem = new Scanner(System.in);
+	public static boolean validaItem(String codigoItem) {
 		
 		boolean validaItem = false;
 		
-		while (validaItem == false) {
-			System.out.println("Código do Item: ");
-			codigoItem = entradaItem.nextLine();
-			int resultadoBusca = Item.buscaItem(codigoItem);
-			if (resultadoBusca == -1) {
-				System.out.println("Item Não Cadastrado: ");
-			} else {
-				validaItem = true;
-			}
+		int resultadoBusca = Item.buscaItem(codigoItem);
+		
+		if (resultadoBusca == -1) {
+			validaItem = false;
+		} else {
+			validaItem = true;
 		}
 		
-		return codigoItem;
+		return validaItem;
 		
 	}
 	
