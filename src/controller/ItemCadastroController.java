@@ -16,6 +16,7 @@ public class ItemCadastroController {
 	
 	ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 	ArrayList<String> listaQuantidades = new ArrayList<String>();
+	ArrayList<String> listaProdutosQuantidades = new ArrayList<String>();
 	
 	static int contadorCodigo = 0;
 	
@@ -111,14 +112,15 @@ public class ItemCadastroController {
 			listaProdutos.add(Produto.getProduto(indexProduto));
 			
 			listaQuantidades.add(quantidadeProduto);
+			
+			String stringNomeQuantidadeProduto = nomeProduto + " (" + quantidadeProduto + " kg)";
+			listaProdutosQuantidades.add(stringNomeQuantidadeProduto);
     		
     		
     		inputQuantidadeProdutoCadastro.setText("");
     		inputNomeProdutoCadastro.setText("");
     		inputCodigoProdutoCadastro.setText("");
     		inputCodigoProdutoCadastro.setEditable(true);
-    		System.out.println(listaQuantidades);
-    		System.out.println(listaProdutos);
     	}
     	
     	
@@ -184,7 +186,7 @@ public class ItemCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Item novoItem = new Item(codigo, nome, precoFormatado, descricao, categoria, listaProdutos, listaQuantidades);
+    		Item novoItem = new Item(codigo, nome, precoFormatado, descricao, categoria, listaProdutosQuantidades, listaProdutos, listaQuantidades);
     		Item.cadastrar(novoItem);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();

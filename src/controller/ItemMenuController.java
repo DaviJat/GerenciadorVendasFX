@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +12,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.Item;
 
 public class ItemMenuController {
 
-    @FXML
+	@FXML
     private Button btnAtualizaLista;
 
     @FXML
@@ -30,32 +34,56 @@ public class ItemMenuController {
     private Button btnVoltar;
 
     @FXML
-    private TableColumn<?, ?> colunaCategoria;
+    private TableColumn<Item, String> colunaCategoria;
 
     @FXML
-    private TableColumn<?, ?> colunaCodigo;
+    private TableColumn<Item, String> colunaCodigo;
 
     @FXML
-    private TableColumn<?, ?> colunaDescricao;
+    private TableColumn<Item, String> colunaDescricao;
 
     @FXML
-    private TableColumn<?, ?> colunaNome;
+    private TableColumn<Item, String> colunaNome;
 
     @FXML
-    private TableColumn<?, ?> colunaPreco;
+    private TableColumn<Item, String> colunaPreco;
 
     @FXML
-    private TableColumn<?, ?> colunaProdutos;
+    private TableColumn<Item, String> colunaProdutos;
 
     @FXML
-    private TableColumn<?, ?> colunaQuantidades;
-
+    private TableView<Item> tabelaItens;
+    
+    ObservableList<Item> listaItens = FXCollections.observableArrayList(Item.getListaItem());
+    
     @FXML
-    private TableView<?> tabelaItens;
+    public void initialize() {
+    	
+    	colunaCodigo.setCellValueFactory(new PropertyValueFactory<Item, String>("codigo"));
+        colunaNome.setCellValueFactory(new PropertyValueFactory<Item, String>("nome"));
+        colunaPreco.setCellValueFactory(new PropertyValueFactory<Item, String>("preco"));
+        colunaDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("descricao"));
+        colunaCategoria.setCellValueFactory(new PropertyValueFactory<Item, String>("categoria"));
+        colunaProdutos.setCellValueFactory(new PropertyValueFactory<Item, String>("listaProdutosQuantidades"));
+
+        tabelaItens.setItems(listaItens);
+    }
 
     @FXML
     void atualizarLista(ActionEvent event) {
+    	
+    	listaItens.clear();
+    	
+    	listaItens = FXCollections.observableArrayList(Item.getListaItem());
+    	
+    	colunaCodigo.setCellValueFactory(new PropertyValueFactory<Item, String>("codigo"));
+        colunaNome.setCellValueFactory(new PropertyValueFactory<Item, String>("nome"));
+        colunaPreco.setCellValueFactory(new PropertyValueFactory<Item, String>("preco"));
+        colunaDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("descricao"));
+        colunaCategoria.setCellValueFactory(new PropertyValueFactory<Item, String>("categoria"));
+        colunaProdutos.setCellValueFactory(new PropertyValueFactory<Item, String>("listaProdutosQuantidades"));
 
+        tabelaItens.setItems(listaItens);
     }
 
     @FXML

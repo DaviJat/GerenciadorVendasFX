@@ -16,8 +16,7 @@
             <TableColumn fx:id="colunaPreco" prefWidth="84.80006408691406" text="Preço" />
             <TableColumn fx:id="colunaDescricao" prefWidth="140.0" text="Descrição" />
             <TableColumn fx:id="colunaCategoria" prefWidth="84.0" text="Categoria" />
-            <TableColumn fx:id="colunaProdutos" prefWidth="126.4000244140625" text="Produtos" />
-            <TableColumn fx:id="colunaQuantidades" prefWidth="110.40008544921875" text="Quantidades" />
+            <TableColumn fx:id="colunaProdutos" prefWidth="230.40008544921875" text="Produtos " />
          </columns>
       </TableView>
       <Button fx:id="btnCadastrarItem" layoutX="147.0" layoutY="67.0" mnemonicParsing="false" onAction="#cadastrarItem" prefHeight="28.0" prefWidth="79.0" text="Cadastrar" />

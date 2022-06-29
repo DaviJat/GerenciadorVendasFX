@@ -19,6 +19,7 @@ public class Item {
 	private double preco;
 	private String descricao;
 	private String categoria;
+	private ArrayList<String> listaProdutosQuantidades;
 	private ArrayList<Produto> listaProdutosItem;
 	private ArrayList<String> listaQuantidadesProdutos;
 	
@@ -37,13 +38,14 @@ public class Item {
 	 * @param quantidades
 	 */
 	public Item(String codigo, String nome, double preco, String descricao,
-			    String categoria, ArrayList<Produto> produtos, ArrayList<String> quantidades) {
+			    String categoria, ArrayList<String> produtosQuantidades, ArrayList<Produto> produtos, ArrayList<String> quantidades) {
 		
 		setCodigo(codigo);
 		setNome(nome);
 		setPreco(preco);
 		setDescricao(descricao);
 		setCategoria(categoria);
+		setListaProdutosQuantidades(produtosQuantidades);
 		setListaProdutosItem(produtos);
 		setListaQuantidadesProdutos(quantidades);
 	}
@@ -264,43 +266,31 @@ public class Item {
 	}
 	
 	/**
-	 * Printa a lista de Items
-	 */
-	public static void listar() {
-		for (Item item : listaItem) {
-            
-			ArrayList<String> nomesProdutos = Item
-					.retornaNomesProdutos(item.getListaProdutosItem(), 
-							item.getListaQuantidadesProdutos());
-            
-            System.out.println("| Codigo: "         + item.getCodigo()+  
-			 				   " | Nome: "        + item.getNome() +  
-			 				   " | Preço: R$"     + item.getPreco() +  
-			 				   " | Descrição: "   + item.getDescricao() +  
-			 				   " | Categoria: "   + item.getCategoria() +
-			 				   " | Produtos: "    + nomesProdutos);
-        }
-	}
-	
-	/**
 	 * Função que retorna lista com os nomes do produtos de um item e suas quantidades em gramas
 	 * @param listaProdutosItem
 	 * @param listaQuantitadesProdutos
 	 * @return
 	 */
-	public static ArrayList<String> retornaNomesProdutos(ArrayList<Produto> listaProdutosItem, 
-			ArrayList<String> listaQuantitadesProdutos) {
+	public static ArrayList<String> retornaListaProdutosQuantidades() {
 		
-		ArrayList<String> nomesProdutos = new ArrayList<String>();
+		ArrayList<String> listaProdutosQuantidades = new ArrayList<String>();
 		
-		int index = 0;
-		
-		for(Produto produto : listaProdutosItem){
-			nomesProdutos.add(produto.getNome() + " " + listaQuantitadesProdutos.get(index) + "g");
-			index ++;
+		for (Item item : listaItem) {
+			
+			ArrayList<Produto> listaProdutosItem = item.getListaProdutosItem();
+			ArrayList<String> listaQuantitadesProdutos = item.getListaQuantidadesProdutos();
+			
+			int index = 0;
+			
+			for(Produto produto : listaProdutosItem){
+				listaProdutosQuantidades.add(produto.getNome() + " " + listaQuantitadesProdutos.get(index) + "kg");
+				index ++;
+			}
 		}
 		
-		return nomesProdutos;
+		
+		
+		return listaProdutosQuantidades; 	
 	}
 	
 	/**
@@ -422,6 +412,14 @@ public class Item {
 	 */
 	public static void limpaListaItem() {
 		listaItem.clear();
+	}
+
+	public ArrayList<String> getListaProdutosQuantidades() {
+		return listaProdutosQuantidades;
+	}
+
+	public void setListaProdutosQuantidades(ArrayList<String> listaProdutosQuantidades) {
+		this.listaProdutosQuantidades = listaProdutosQuantidades;
 	}
 }
 
