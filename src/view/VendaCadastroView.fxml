@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VendaCadastroController">
+   <children>
+      <Label layoutX="48.0" layoutY="136.0" text="Data da Venda:" />
+      <TextField fx:id="inputDataCadastro" layoutX="45.0" layoutY="153.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label layoutX="48.0" layoutY="196.0" text="Hora da Venda:" />
+      <Button fx:id="btnSalvar" layoutX="221.0" layoutY="324.0" mnemonicParsing="false" onAction="#salvaRegistroVenda" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inputHoraCadastro" layoutX="45.0" layoutY="213.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label layoutX="203.0" layoutY="34.0" text="Registrar Venda" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="256.0" text="Preço:" />
+      <Label fx:id="msgErro" alignment="CENTER" layoutX="104.0" layoutY="356.0" prefHeight="20.0" prefWidth="322.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputPrecoCadastro" layoutX="45.0" layoutY="273.0" prefHeight="34.0" prefWidth="204.0" />
+      <TextField fx:id="inputFormaPagamentoCadastro" layoutX="279.0" layoutY="153.0" prefHeight="34.0" prefWidth="204.0" />
+      <TextField fx:id="inputCodigoItemCadastro" layoutX="279.0" layoutY="213.0" prefHeight="34.0" prefWidth="170.0" />
+      <Label layoutX="282.0" layoutY="136.0" text="Forma Pagamento" />
+      <Label fx:id="labelCodigoProduto" layoutX="281.0" layoutY="196.0" text="Código Item:" />
+      <Button fx:id="btnPesquisaCodigoItem" layoutX="449.0" layoutY="213.0" mnemonicParsing="false" onAction="#pesquisarCodigoItem" prefHeight="34.0" prefWidth="34.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="msgErroHora" alignment="BOTTOM_RIGHT" layoutX="137.0" layoutY="193.0" prefHeight="20.0" prefWidth="109.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroItem" alignment="BOTTOM_RIGHT" layoutX="381.0" layoutY="193.0" prefHeight="20.0" prefWidth="99.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputNomeItemCadastro" layoutX="279.0" layoutY="273.0" prefHeight="34.0" prefWidth="170.0" />
+      <Label layoutX="282.0" layoutY="256.0" text="Nome do Item:" />
+      <Button fx:id="btnAdicionarItem" layoutX="449.0" layoutY="273.0" mnemonicParsing="false" onAction="#adicionarItem" prefHeight="34.0" prefWidth="34.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/AddIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="inputCodigoClienteCadastro" layoutX="45.0" layoutY="95.0" prefHeight="34.0" prefWidth="53.0" />
+      <Label layoutX="48.0" layoutY="78.0" text="Código Cliente:" />
+      <TextField fx:id="inputNomeClienteCadastro" layoutX="139.0" layoutY="95.0" prefHeight="34.0" prefWidth="109.0" />
+      <Button fx:id="btnPesquisaCodigoCliente" layoutX="98.0" layoutY="95.0" mnemonicParsing="false" onAction="#pesquisarCodigoCliente" prefHeight="34.0" prefWidth="34.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="msgErroData" alignment="BOTTOM_RIGHT" layoutX="139.0" layoutY="135.0" prefHeight="20.0" prefWidth="109.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroPreco" alignment="BOTTOM_RIGHT" layoutX="139.0" layoutY="253.0" prefHeight="20.0" prefWidth="109.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroCliente" alignment="BOTTOM_RIGHT" layoutX="139.0" layoutY="77.0" prefHeight="20.0" prefWidth="109.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

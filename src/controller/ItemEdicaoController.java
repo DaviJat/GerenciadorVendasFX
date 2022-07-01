@@ -13,7 +13,7 @@ import model.Item;
 
 public class ItemEdicaoController {
 
-    @FXML
+	@FXML
     private Button btnPesquisaCodigoItem;
 
     @FXML
@@ -53,16 +53,8 @@ public class ItemEdicaoController {
     private Label msgErro;
 
     @FXML
-    private Label msgErroEstoque;
-
-    @FXML
-    private Label msgErroFornecedor;
-
-    @FXML
     private Label msgErroPreco;
 
-    @FXML
-    private Label msgErroValidade;
 
     @FXML
     void pesquisarCodigoItem(ActionEvent event) {
@@ -129,16 +121,12 @@ public class ItemEdicaoController {
         		
         		msgErro.setText("");
         		msgErroPreco.setText("");
-        		msgErroEstoque.setText("");
-        		msgErroValidade.setText("");
         		msgErro.setText("Preencha todos os campos!");
         		
         	} else if (precoFormatado < 0) {
     	    	
         		msgErro.setText("");
         		msgErroPreco.setText("");
-        		msgErroEstoque.setText("");
-        		msgErroValidade.setText("");
         		msgErroPreco.setText("Valor Inválido");
         		
         	}  else {
@@ -153,7 +141,7 @@ public class ItemEdicaoController {
     	} else {
     		
     		msgErro.setText("");
-    		msgErro.setText("Digite o código do Fornecedor!");
+    		msgErro.setText("Digite o código do Item!");
     		
     	}
 

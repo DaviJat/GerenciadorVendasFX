@@ -33,22 +33,7 @@
       <TextField fx:id="inputCategoriaEdicao" disable="true" layoutX="279.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" />
       <TextField fx:id="inputDescricaoEdicao" disable="true" layoutX="279.0" layoutY="139.0" prefHeight="34.0" prefWidth="204.0" />
       <Label fx:id="labelDescricao" disable="true" layoutX="282.0" layoutY="122.0" text="Descrição:" />
-      <Label fx:id="msgErroValidade" alignment="BOTTOM_RIGHT" layoutX="101.0" layoutY="239.0" prefHeight="20.0" prefWidth="145.0" textAlignment="RIGHT" textFill="#f74d4d">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
       <Label fx:id="msgErroPreco" alignment="BOTTOM_RIGHT" layoutX="127.0" layoutY="179.0" prefHeight="20.0" prefWidth="119.0" textAlignment="RIGHT" textFill="#f74d4d">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label fx:id="msgErroEstoque" alignment="BOTTOM_RIGHT" layoutX="373.0" layoutY="119.0" prefHeight="20.0" prefWidth="97.0" textAlignment="RIGHT" textFill="#f74d4d">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <Label fx:id="msgErroFornecedor" alignment="BOTTOM_RIGHT" layoutX="391.0" layoutY="179.0" prefHeight="20.0" prefWidth="91.0" textAlignment="RIGHT" textFill="#f74d4d">
          <font>
             <Font size="10.0" />
          </font>

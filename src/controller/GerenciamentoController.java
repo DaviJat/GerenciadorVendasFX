@@ -83,8 +83,14 @@ public class GerenciamentoController {
     }
     
     @FXML
-    void abrirMenuVendas(ActionEvent event) {
-
+    void abrirMenuVendas(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/VendaMenuView.fxml"));
+    	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Menu Itens");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
     
     @FXML
