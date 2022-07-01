@@ -13,7 +13,7 @@
          <columns>
             <TableColumn fx:id="colunaCodigo" prefWidth="45.60000687837601" text="Código" />
             <TableColumn fx:id="colunaNome" prefWidth="137.59997177124023" text="Nome do Produto" />
-            <TableColumn fx:id="colunaPreco" prefWidth="84.80006408691406" text="Preço" />
+            <TableColumn fx:id="colunaPreco" prefWidth="84.80006408691406" text="Preço (R$)" />
             <TableColumn fx:id="colunaDescricao" prefWidth="140.0" text="Descrição" />
             <TableColumn fx:id="colunaCategoria" prefWidth="84.0" text="Categoria" />
             <TableColumn fx:id="colunaProdutos" prefWidth="230.40008544921875" text="Produtos " />

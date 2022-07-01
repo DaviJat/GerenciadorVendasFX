@@ -195,60 +195,19 @@ public class Item {
 	}
 	
 	/**
-	 * Recebe o codigo do Item e o novo nome, e edita no objeto da lista
+	 * Recebe o codigo do Item e os novos dados, e edita no objeto da lista
 	 * @param codigoString
 	 * @param novoNome
 	 */
-	public static void editarNome(String codigoString, String novoNome) {
+	public static void editar(String codigoString, String novoNome, double novoPreco, String novaCategoria, String novaDescricao) {
 		
 		int i = buscaItem(codigoString);
 		
 		if (i != -1) {
 			listaItem.get(i).setNome(novoNome);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Item e o novo preco, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoPreco
-	 */
-	public static void editarPreco(String codigoString, String novoPrecoString) {
-		
-		double novoPreco = Double.parseDouble(novoPrecoString);
-		
-		int i = buscaItem(codigoString);
-		
-		if (i != -1) {
 			listaItem.get(i).setPreco(novoPreco);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Item e a nova Descricao, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novaDescricao
-	 */
-	public static void editarDescricao(String codigoString, String novaDescricao) {
-		
-		int i = buscaItem(codigoString);
-		
-		if (i != -1) {
+			listaItem.get(i).setCategoria(novaCategoria);
 			listaItem.get(i).setDescricao(novaDescricao);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Item e a nova Categoria, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novaCategoria
-	 */
-	public static void editarCategoria(String codigoString, String novaCategoria) {
-		
-		int i = buscaItem(codigoString);
-		
-		if (i != -1) {
-			listaItem.get(i).setDescricao(novaCategoria);
 		}
 	}
 	

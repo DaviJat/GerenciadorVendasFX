@@ -12,7 +12,7 @@
    <children>
       <Label layoutX="48.0" layoutY="72.0" text="Nome do Item:" />
       <TextField fx:id="inputItemCadastro" layoutX="45.0" layoutY="89.0" prefHeight="34.0" prefWidth="204.0" />
-      <Label layoutX="48.0" layoutY="132.0" text="Preço:" />
+      <Label layoutX="48.0" layoutY="132.0" text="Preço (R$):" />
       <Button fx:id="btnSalvar" layoutX="221.0" layoutY="260.0" mnemonicParsing="false" onAction="#salvaCadastroItem" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />

@@ -110,8 +110,14 @@ public class ItemMenuController {
     }
 
     @FXML
-    void editarItem(ActionEvent event) {
-
+    void editarItem(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/ItemEdicaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Cadastro");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML

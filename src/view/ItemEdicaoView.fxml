@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="317.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemEdicaoController">
+   <children>
+      <Label fx:id="labelNomeItem" disable="true" layoutX="48.0" layoutY="122.0" text="Nome do Item:" />
+      <TextField fx:id="inputNomeItemEdicao" disable="true" layoutX="45.0" layoutY="139.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label fx:id="labelPreco" disable="true" layoutX="48.0" layoutY="182.0" text="Preço (R$):" />
+      <Button fx:id="btnSalvar" disable="true" layoutX="221.0" layoutY="250.0" mnemonicParsing="false" onAction="#salvaCadastroItem" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inputPrecoEdicao" disable="true" layoutX="45.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label layoutX="218.0" layoutY="20.0" text="Editar Item" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelCategoria" disable="true" layoutX="282.0" layoutY="182.0" text="Categoria:" />
+      <Label fx:id="msgErro" alignment="CENTER" layoutX="143.0" layoutY="287.0" prefHeight="20.0" prefWidth="244.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputCategoriaEdicao" disable="true" layoutX="279.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" />
+      <TextField fx:id="inputDescricaoEdicao" disable="true" layoutX="279.0" layoutY="139.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label fx:id="labelDescricao" disable="true" layoutX="282.0" layoutY="122.0" text="Descrição:" />
+      <Label fx:id="msgErroValidade" alignment="BOTTOM_RIGHT" layoutX="101.0" layoutY="239.0" prefHeight="20.0" prefWidth="145.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroPreco" alignment="BOTTOM_RIGHT" layoutX="127.0" layoutY="179.0" prefHeight="20.0" prefWidth="119.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroEstoque" alignment="BOTTOM_RIGHT" layoutX="373.0" layoutY="119.0" prefHeight="20.0" prefWidth="97.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroFornecedor" alignment="BOTTOM_RIGHT" layoutX="391.0" layoutY="179.0" prefHeight="20.0" prefWidth="91.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputCodigoItemEdicao" layoutX="45.0" layoutY="79.0" prefHeight="34.0" prefWidth="170.0" />
+      <Label fx:id="labelCodigoItem" layoutX="49.0" layoutY="62.0" text="Código do Item:" />
+      <Button fx:id="btnPesquisaCodigoItem" layoutX="215.0" layoutY="79.0" mnemonicParsing="false" onAction="#pesquisarCodigoItem" prefHeight="34.0" prefWidth="34.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>
