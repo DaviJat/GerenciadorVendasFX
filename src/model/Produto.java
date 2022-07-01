@@ -216,14 +216,14 @@ public class Produto {
 	}
 	
 	/**
-	 * Loop que verifica se foi encontrado um fornecedor com o código digitado
+	 * Loop que verifica se foi encontrado um Produto com o código digitado
 	 * @return 
 	 */
 	public static boolean validaProduto(String codigoProduto) {
 		
 		boolean validaProduto = false;
 		
-		int resultadoBusca = Fornecedor.buscaFornecedor(codigoProduto);
+		int resultadoBusca = Produto.buscaProduto(codigoProduto);
 		
 		if (resultadoBusca == -1) {
 			validaProduto = false;

@@ -174,8 +174,16 @@ public class ProdutoEdicaoController {
     		double estoqueFormatado = Geral.validaDouble(estoque);
     		String validadeFormatada = Geral.validaData(validade);
     	    
-        	if (precoFormatado < 0 || estoqueFormatado < 0 || validadeFormatada == null) {
+        	if (nome == "" || preco == "" || validade == "" || estoque == "" || nomeFornecedor == "") {
         		
+        		msgErro.setText("");
+        		msgErroPreco.setText("");
+        		msgErroEstoque.setText("");
+        		msgErroValidade.setText("");
+        		msgErro.setText("Preencha todos os campos!");
+        		
+        	} else if (precoFormatado < 0 || estoqueFormatado < 0 || validadeFormatada == null) {
+    	    	
         		msgErro.setText("");
         		msgErroPreco.setText("");
         		msgErroEstoque.setText("");
@@ -188,14 +196,6 @@ public class ProdutoEdicaoController {
         		} else if (validadeFormatada == null) {
         			msgErroValidade.setText("Data inválida");
         		}
-        		
-        	} else if (nome == "" || preco == "" || validade == "" || estoque == "" || nomeFornecedor == "") {
-    	    	
-        		msgErro.setText("");
-        		msgErroPreco.setText("");
-        		msgErroEstoque.setText("");
-        		msgErroValidade.setText("");
-        		msgErro.setText("Preencha todos os campos!");
         		
         	}  else {
         		

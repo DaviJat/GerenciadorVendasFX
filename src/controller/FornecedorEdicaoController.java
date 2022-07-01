@@ -94,7 +94,7 @@ public class FornecedorEdicaoController {
     		String codigo = inputCodigoEdicao.getText();
 	    	String nome = inputFornecedorEdicao.getText();
 			String cnpj = inputCnpjEdicao.getText();
-			String endereco = inputCnpjEdicao.getText();
+			String endereco = inputEnderecoEdicao.getText();
 		    
 		    if (nome == "" || cnpj == "" || endereco == "") {
 		    	

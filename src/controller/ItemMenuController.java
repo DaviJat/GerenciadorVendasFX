@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -87,8 +88,14 @@ public class ItemMenuController {
     }
 
     @FXML
-    void bntVoltar(ActionEvent event) {
-
+    void bntVoltar(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Menu Gerenciamento");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML
@@ -108,8 +115,14 @@ public class ItemMenuController {
     }
 
     @FXML
-    void excluirItem(ActionEvent event) {
-
+    void excluirItem(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/ItemExclusaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Exclusão");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
 }

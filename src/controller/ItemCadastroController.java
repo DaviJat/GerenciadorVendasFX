@@ -160,26 +160,29 @@ public class ItemCadastroController {
 		
 		double precoFormatado = Geral.validaDouble(preco);
 	    
-    	if (precoFormatado < 0) {
+    	if (nome == "" || preco == "" || descricao == "" || categoria == "") {
     		
+    		msgErro.setText("");
+    		msgErroPreco.setText("");
+    		msgErroQuantidade.setText("");
+    		msgErroProduto.setText("");
+    		msgErro.setText("Preencha todos os campos!");
+    		
+    	} else if (precoFormatado < 0) {
+
     		msgErro.setText("");
     		msgErroPreco.setText("");
     		msgErroQuantidade.setText("");
     		msgErroProduto.setText("");
     		msgErroPreco.setText("Valor Inválido");
     		
-    	} else if (nome == "" || preco == "" || descricao == "" || categoria == "" || listaProdutos.isEmpty()) {
+    	} else if (listaProdutos.isEmpty()) {
 	    	
     		msgErro.setText("");
     		msgErroPreco.setText("");
     		msgErroQuantidade.setText("");
     		msgErroProduto.setText("");
-    		
-    		if (listaProdutos.isEmpty()) {
-    			msgErro.setText("Insira pelo menos um produto!");
-    		} else {
-    			msgErro.setText("Preencha todos os campos!");
-    		}
+    		msgErro.setText("Insira pelo menos um produto!");
     		
     	}  else {
     		

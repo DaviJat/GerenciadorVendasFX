@@ -110,8 +110,14 @@ public class ProdutoMenuController {
     }
 
     @FXML
-    void excluirProduto(ActionEvent event) {
-
+    void excluirProduto(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/ProdutoExclusaoView.fxml"));
+    	Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Exclusão");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
     
     @FXML
