@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClienteCadastroController">
+   <children>
+      <Label layoutX="40.0" layoutY="72.0" text="Nome do Cliente:" />
+      <TextField fx:id="inputClienteCadastro" layoutX="35.0" layoutY="89.0" prefHeight="34.0" prefWidth="174.0" />
+      <Label layoutX="40.0" layoutY="132.0" text="CPF:" />
+      <Button fx:id="btnSalvar" layoutX="78.0" layoutY="316.0" mnemonicParsing="false" onAction="#salvaCadastroCliente" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inputCpfCadastro" layoutX="35.0" layoutY="149.0" prefHeight="34.0" prefWidth="174.0" />
+      <Label layoutX="50.0" layoutY="30.0" text="Cadastrar Cliente" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="192.0" text="Email:" />
+      <Label fx:id="msgErro" alignment="CENTER" layoutY="353.0" prefHeight="20.0" prefWidth="244.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputEmailCadastro" layoutX="35.0" layoutY="209.0" prefHeight="34.0" prefWidth="174.0" />
+      <Label layoutX="40.0" layoutY="255.0" text="Telefone:" />
+      <TextField fx:id="inputTelefoneCadastro" layoutX="35.0" layoutY="272.0" prefHeight="34.0" prefWidth="174.0" />
+   </children>
+</Pane>
