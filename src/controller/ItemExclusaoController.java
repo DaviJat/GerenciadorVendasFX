@@ -8,21 +8,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Produto;
+import model.Item;
 
-public class ProdutoExclusaoController {
+public class ItemExclusaoController {
 
     @FXML
     private Button btnExcluir;
 
     @FXML
-    private Button btnPesquisaCodigoProduto;
+    private Button btnPesquisaCodigoItem;
 
     @FXML
     private TextField inputCodigoExclusao;
 
     @FXML
-    private TextField inputNomeProduto;
+    private TextField inputNomeItem;
 
     @FXML
     private Label labelCodigo;
@@ -37,38 +37,38 @@ public class ProdutoExclusaoController {
     		
     		String codigo = inputCodigoExclusao.getText();
     		
-    		Produto.excluir(codigo);
+    		Item.excluir(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();
     		
     	}
-    	
+
     }
 
     @FXML
-    void pesquisarCodigoProduto(ActionEvent event) {
+    void pesquisarCodigoItem(ActionEvent event) {
     	
     	String codigo = inputCodigoExclusao.getText();
     	
-    	if (Produto.validaProduto(codigo)) {
+    	if (Item.validaItem(codigo)) {
     		
     		msgErro.setText("");
     		
-    		ArrayList<Produto> listaProdutos = Produto.getListaProduto();
+    		ArrayList<Item> listaItem = Item.getListaItem();
     		
-    		int index = Produto.buscaProduto(codigo);
+    		int index = Item.buscaItem(codigo);
     		
-    		inputNomeProduto.setText(listaProdutos.get(index).getNome());
+    		inputNomeItem.setText(listaItem.get(index).getNome());
     		
     		inputCodigoExclusao.setDisable(true);
     		labelCodigo.setDisable(true);
-    		btnPesquisaCodigoProduto.setDisable(true);
+    		btnPesquisaCodigoItem.setDisable(true);
     		btnExcluir.setDisable(false);
     		
     	} else {
     		
-    		msgErro.setText("Produto não encontrado");
+    		msgErro.setText("Item não encontrado");
     		
     	}
 
