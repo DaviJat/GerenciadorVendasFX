@@ -30,7 +30,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="inputPrecoCadastro" layoutX="45.0" layoutY="273.0" prefHeight="34.0" prefWidth="204.0" />
+      <TextField fx:id="inputPrecoCadastro" editable="false" layoutX="45.0" layoutY="273.0" prefHeight="34.0" prefWidth="204.0" />
       <TextField fx:id="inputFormaPagamentoCadastro" layoutX="279.0" layoutY="153.0" prefHeight="34.0" prefWidth="204.0" />
       <TextField fx:id="inputCodigoItemCadastro" layoutX="279.0" layoutY="213.0" prefHeight="34.0" prefWidth="170.0" />
       <Label layoutX="282.0" layoutY="136.0" text="Forma Pagamento" />

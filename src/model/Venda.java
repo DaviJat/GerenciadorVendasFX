@@ -19,7 +19,7 @@ public class Venda {
 	private String hora;
 	private double precoTotal;
 	private String formaPagamento;
-	private String codigoCliente;
+	private String nomeCliente;
 	private ArrayList<String> listaNomesItensVenda;
 	private ArrayList<Item> listaItensVenda;
 	
@@ -38,14 +38,14 @@ public class Venda {
 	 * @param itens
 	 */
 	public Venda(String codigo, String data, String hora, double precoTotal,
-			     String formaPagamento, String codigoCliente, ArrayList<String> nomesItens, ArrayList<Item> itens) {
+			     String formaPagamento, String nomeCliente, ArrayList<String> nomesItens, ArrayList<Item> itens) {
 		
 		setCodigo(codigo);
 		setData(data);
 		setHora(hora);
 		setPrecoTotal(precoTotal);
 		setFormaPagamento(formaPagamento);
-		setFormaPagamento(codigoCliente);
+		setNomeCliente(nomeCliente);
 		setListaNomesItensVenda(nomesItens);
 		setListaItensVenda(itens);
 	}
@@ -132,20 +132,12 @@ public class Venda {
 		this.formaPagamento = formaPagamento;
 	}
 	
-	/**
-	 * Getter que retorna o codigoCliente
-	 * @return codigoCliente
-	 */
-	public String getCodigoCliente() {
-		return codigoCliente;
+	public String getNomeCliente() {
+		return nomeCliente;
 	}
-	
-	/** 
-	 * Setter do codigoCliente
-	 * @param codigoCliente
-	 */
-	public void CodigoCliente(String codigoCliente) {
-		this.codigoCliente = codigoCliente;
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
 	
 	public ArrayList<String> getListaNomesItensVenda() {
