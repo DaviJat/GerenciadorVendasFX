@@ -20,7 +20,8 @@ public class Venda {
 	private double precoTotal;
 	private String formaPagamento;
 	private String codigoCliente;
-	private ArrayList<String> listaItensVenda;
+	private ArrayList<String> listaNomesItensVenda;
+	private ArrayList<Item> listaItensVenda;
 	
 	public static ArrayList<Venda> listaVenda = new ArrayList<Venda>();
 
@@ -37,7 +38,7 @@ public class Venda {
 	 * @param itens
 	 */
 	public Venda(String codigo, String data, String hora, double precoTotal,
-			     String formaPagamento, String codigoCliente, ArrayList<String> itens) {
+			     String formaPagamento, String codigoCliente, ArrayList<String> nomesItens, ArrayList<Item> itens) {
 		
 		setCodigo(codigo);
 		setData(data);
@@ -45,6 +46,7 @@ public class Venda {
 		setPrecoTotal(precoTotal);
 		setFormaPagamento(formaPagamento);
 		setFormaPagamento(codigoCliente);
+		setListaNomesItensVenda(nomesItens);
 		setListaItensVenda(itens);
 	}
 	
@@ -146,12 +148,20 @@ public class Venda {
 		this.codigoCliente = codigoCliente;
 	}
 	
-	/**
-	 * Getter que retorna a listaItensVenda
-	 * @return listaItensVenda
-	 */
-	public ArrayList<String> getListaItensVenda() {
+	public ArrayList<String> getListaNomesItensVenda() {
+		return listaNomesItensVenda;
+	}
+
+	public void setListaNomesItensVenda(ArrayList<String> listaNomesItensVenda) {
+		this.listaNomesItensVenda = listaNomesItensVenda;
+	}
+	
+	public ArrayList<Item> getListaItensVenda() {
 		return listaItensVenda;
+	}
+
+	public void setListaItensVenda(ArrayList<Item> listaItensVenda) {
+		this.listaItensVenda = listaItensVenda;
 	}
 	
 	/**
@@ -162,15 +172,8 @@ public class Venda {
 		return listaVenda;
 	}
 	
-	/** 
-	 * Setter do listaItensVenda
-	 * @param listaItensVenda
-	 */
-	public void setListaItensVenda(ArrayList<String> listaItensVenda) {
-		this.listaItensVenda = listaItensVenda;
-	}
-	
 	//Fim Get/Set
+	
 	
 	/**
 	 * Recebe objeto com os valores e insere na listaVenda
@@ -253,42 +256,6 @@ public class Venda {
 	}
 	
 	/**
-	 * Printa a lista de Vendas
-	 */
-	public static void listar() {
-		for (Venda venda : listaVenda) {
-            
-			ArrayList<String> nomesItens = Venda
-					.retornaItens(venda.getListaItensVenda());
-            
-            System.out.println("| Codigo: "           + venda.getCodigo()+  
-			 				   " | Data: "            + venda.getData() +  
-			 				   " | Hora: "            + venda.getHora() +  
-			 				   " | Preço Total: R$"   + venda.getPrecoTotal() +  
-			 				   " | FormaPagamento: "  + venda.getFormaPagamento() +
-			 				   " | Itens: "           + nomesItens);
-            
-            
-        }
-	}
-	
-	/**
-	 * Função auxiliar que retorna lista com nomes dos itens de uma venda
-	 * @param listaItensVenda
-	 * @return
-	 */
-	public static ArrayList<String> retornaItens(ArrayList<String> listaItensVenda) {
-		
-		ArrayList<String> itens = new ArrayList<String>();
-		
-		for(String codigo : listaItensVenda){
-			itens.add(Item.retornaNomesItens(codigo));
-		}
-		
-		return itens;
-	}
-	
-	/**
 	 * Recebe um código de Venda e encontra o index do objeto com esse código,
 	 * na lista
 	 * @param codigo
@@ -338,5 +305,6 @@ public class Venda {
 	public static void limpaListaVenda() {
 		listaVenda.clear();
 	}
+
 }
 

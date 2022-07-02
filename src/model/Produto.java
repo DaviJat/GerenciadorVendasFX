@@ -241,7 +241,9 @@ public class Produto {
 	 * @param produtoVenda
 	 * @param quantidade
 	 */
-	public static void removerEstoque(Produto produtoVenda, double quantidade) {
+	public static void removerEstoque(Produto produtoVenda, String quantidadeString) {
+		
+		double quantidade = Double.parseDouble(quantidadeString);
 		
 		int indice = 0;
 		
@@ -250,17 +252,10 @@ public class Produto {
         	for(Produto produto : listaProduto) {
         		if (produto.equals(produtoVenda)) {
         			produto.listaProduto.get(indice).estoque -= quantidade;
-                    System.out.println("Estoque de " + produto.listaProduto.get(indice).nome + ": "
-                    		+ produto.listaProduto.get(indice).estoque + " (gramas)");
         		}
         		indice ++;
         	}
-        
-            
-        }else {
-            System.out.println("Sem quantidade necessária de produtos para produzir o item");
         }
-		
 	}
 	
 	/**

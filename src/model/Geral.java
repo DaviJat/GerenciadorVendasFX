@@ -6,7 +6,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
-import java.util.Scanner;
 
 /*
 import classes.Fornecedor;
@@ -100,29 +99,19 @@ public class Geral {
 	 * Loop com input da hora, finalizada apenas quando a hora inserida for válida
 	 * @return
 	 */
-	public static String validaHora() {
+	public static String validaHora(String entradaHora) {
 	    LocalTime hora = null;
 	    String horaFormatada = null;
 	    
-	    @SuppressWarnings("resource")
-		Scanner entradaHora = new Scanner(System.in);
-		
-		boolean validaHora = false;
-		
-		while (validaHora == false) {
-		    DateTimeFormatter dateTimeFormatter = DateTimeFormatter
-		    .ofPattern("HH:mm:ss")
-		    .withResolverStyle(ResolverStyle.STRICT);
-		    try {
-		    	System.out.println("Digite um horário: ");
-				String horaString = entradaHora.nextLine();
-		        hora = LocalTime.parse(horaString, dateTimeFormatter);
-		        horaFormatada = hora.toString();
-		        validaHora = true;
-		    } catch (DateTimeParseException e) {
-		    	System.out.println("Hora inválida - Utilize o formato hh:mm:ss");
-		    }
-		}
+	    DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+	    .ofPattern("HH:mm:ss")
+	    .withResolverStyle(ResolverStyle.STRICT);
+	    try {
+	        hora = LocalTime.parse(entradaHora, dateTimeFormatter);
+	        horaFormatada = hora.toString();
+	    } catch (DateTimeParseException e) {
+	    	horaFormatada = null;
+	    }
 		
 	    return horaFormatada;
 	}
