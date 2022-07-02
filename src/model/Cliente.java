@@ -145,53 +145,14 @@ public class Cliente {
 	 * @param codigoString
 	 * @param novoNome
 	 */
-	public static void editarNome(String codigoString, String novoNome) {
+	public static void editar(String codigoString, String novoNome, String novoCpf, String novoEmail, String novoTelefone) {
 		
 		int i = buscaCliente(codigoString);
 		
 		if (i != -1) {
 			listaCliente.get(i).setNome(novoNome);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Cliente e o novo cpf, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoCpf
-	 */
-	public static void editarCpf(String codigoString, String novoCpf) {
-		
-		int i = buscaCliente(codigoString);
-		
-		if (i != -1) {
 			listaCliente.get(i).setCpf(novoCpf);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Cliente e o novo Email, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoEmail
-	 */
-	public static void editarEmail(String codigoString, String novoEmail) {
-		
-		int i = buscaCliente(codigoString);
-		
-		if (i != -1) {
 			listaCliente.get(i).setEmail(novoEmail);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Cliente e o novo Telefone, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoTelefone
-	 */
-	public static void editarTelefone(String codigoString, String novoTelefone) {
-		
-		int i = buscaCliente(codigoString);
-		
-		if (i != -1) {
 			listaCliente.get(i).setTelefone(novoTelefone);
 		}
 	}
