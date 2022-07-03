@@ -77,6 +77,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <DatePicker fx:id="inputValidadeEdicao" disable="true" editable="false" layoutX="45.0" layoutY="259.0" prefHeight="34.0" prefWidth="204.0" />
+      <DatePicker fx:id="inputValidadeEdicao" disable="true" layoutX="45.0" layoutY="259.0" prefHeight="34.0" prefWidth="204.0" />
    </children>
 </Pane>

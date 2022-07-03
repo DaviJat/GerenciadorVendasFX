@@ -64,7 +64,7 @@ public class VendaMenuController {
     public void initialize() {
     	
         colunaCodigo.setCellValueFactory(new PropertyValueFactory<Venda, String>("codigo"));
-        colunaCliente.setCellValueFactory(new PropertyValueFactory<Venda, String>("codigoCliente"));
+        colunaCliente.setCellValueFactory(new PropertyValueFactory<Venda, String>("nomeCliente"));
         colunaData.setCellValueFactory(new PropertyValueFactory<Venda, String>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<Venda, String>("hora"));
         colunaPreco.setCellValueFactory(new PropertyValueFactory<Venda, String>("precoTotal"));
@@ -82,7 +82,7 @@ public class VendaMenuController {
     	listaVendas = FXCollections.observableArrayList(Venda.getListaVenda());
     	
     	colunaCodigo.setCellValueFactory(new PropertyValueFactory<Venda, String>("codigo"));
-        colunaCliente.setCellValueFactory(new PropertyValueFactory<Venda, String>("codigoCliente"));
+        colunaCliente.setCellValueFactory(new PropertyValueFactory<Venda, String>("nomeCliente"));
         colunaData.setCellValueFactory(new PropertyValueFactory<Venda, String>("data"));
         colunaHora.setCellValueFactory(new PropertyValueFactory<Venda, String>("hora"));
         colunaPreco.setCellValueFactory(new PropertyValueFactory<Venda, String>("precoTotal"));
@@ -104,13 +104,25 @@ public class VendaMenuController {
     }
 
     @FXML
-    void editarVenda(ActionEvent event) {
-
+    void editarVenda(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/VendaEdicaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Edição");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML
-    void excluirVenda(ActionEvent event) {
-
+    void excluirVenda(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/VendaExclusaoView.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Exclusão");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML

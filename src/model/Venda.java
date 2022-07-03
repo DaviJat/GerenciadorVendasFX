@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Classe para instanciar objetos do tipo Venda, e realizar as funções de
@@ -181,58 +180,18 @@ public class Venda {
 	 * @param codigoString
 	 * @param novaData
 	 */
-	public static void editarData(String codigoString, String novaData) {
+	public static void editar(String codigoString, String novaData, String novaHora, double novoPrecoTotal, String novaFormaPagamento) {
 		
 		int i = buscaVenda(codigoString); 
 		
 		if (i != -1) {
 			listaVenda.get(i).setData(novaData);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Venda e a nova hora, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novaHora
-	 */
-	public static void editarHora(String codigoString, String novaHora) {
-		
-		int i = buscaVenda(codigoString); 
-		
-		if (i != -1) {
 			listaVenda.get(i).setHora(novaHora);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Venda e o novo preco total, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novoPrecoTotal
-	 */
-	public static void editarPrecoTotal(String codigoString, String novoPrecoTotalString) {
-		
-		double novoPrecoTotal = Double.parseDouble(novoPrecoTotalString);
-		
-		int i = buscaVenda(codigoString); 
-		
-		if (i != -1) {
 			listaVenda.get(i).setPrecoTotal(novoPrecoTotal);
-		}
-	}
-	
-	/**
-	 * Recebe o codigo do Venda e o novo preco total, e edita no objeto da lista
-	 * @param codigoString
-	 * @param novaFormaPagamento
-	 */
-	public static void editarFormaPagamento(String codigoString, String novaFormaPagamento) {
-		
-		int i = buscaVenda(codigoString); 
-		
-		if (i != -1) {
 			listaVenda.get(i).setFormaPagamento(novaFormaPagamento);
 		}
 	}
+	
 	
 	/**
 	 * Recebe o codigo do Venda, e exclui da lista
@@ -268,27 +227,19 @@ public class Venda {
 	 * Loop que verifica se foi encontrado uma Venda com o código digitado
 	 * @return 
 	 */
-	public static String validaVenda() {
-		String codigoVenda = null;
-		
-		@SuppressWarnings("resource")
-		Scanner entradaVenda = new Scanner(System.in);
+	public static boolean validaVenda(String codigoVenda) {
 		
 		boolean validaVenda = false;
 		
-		while (validaVenda == false) {
-			System.out.println("Código da Venda: ");
-			codigoVenda = entradaVenda.nextLine();
-			int resultadoBusca = Venda.buscaVenda(codigoVenda);
-			if (resultadoBusca == -1) {
-				System.out.println("Venda Não Cadastrada: ");
-			} else {
-				validaVenda = true;
-			}
+		int resultadoBusca = Venda.buscaVenda(codigoVenda);
+		
+		if (resultadoBusca == -1) {
+			validaVenda = false;
+		} else {
+			validaVenda = true;
 		}
 		
-		return codigoVenda;
-		
+		return validaVenda;
 	}
 	
 	/**

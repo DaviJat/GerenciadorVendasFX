@@ -211,7 +211,7 @@ public class ProdutoEdicaoController {
     	} else {
     		
     		msgErro.setText("");
-    		msgErro.setText("Digite o código do Fornecedor!");
+    		msgErro.setText("Digite o código do Produto!");
     		
     	}
 

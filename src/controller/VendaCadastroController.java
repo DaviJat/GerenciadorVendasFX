@@ -108,6 +108,11 @@ public class VendaCadastroController {
     		msgErroItem.setText("");
     		msgErro.setText("Digite o código do Item");
     		
+    	} else if (Item.validaItem(codigoItem) == false) {
+    		
+    		inputNomeItemCadastro.setText("");
+    		msgErroItem.setText("Código Inválido");
+    		
     	} else {
     		
     		msgErro.setText("");

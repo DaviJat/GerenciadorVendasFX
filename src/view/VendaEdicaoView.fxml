@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="317.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VendaEdicaoController">
+   <children>
+      <Label fx:id="labelPrecoVenda" disable="true" layoutX="282.0" layoutY="183.0" text="Preço:" />
+      <TextField fx:id="inputPrecoVendaEdicao" disable="true" layoutX="279.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label fx:id="labelHora" disable="true" layoutX="48.0" layoutY="182.0" text="Hora Venda:" />
+      <Button fx:id="btnSalvar" disable="true" layoutX="220.0" layoutY="249.0" mnemonicParsing="false" onAction="#salvaCadastroVenda" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Salvar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="inputHoraEdicao" disable="true" layoutX="45.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label layoutX="210.0" layoutY="26.0" text="Editar Venda" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelData" disable="true" layoutX="49.0" layoutY="122.0" text="Data Venda:" />
+      <Label fx:id="msgErro" alignment="CENTER" layoutX="142.0" layoutY="286.0" prefHeight="20.0" prefWidth="244.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputFormaPagamentoEdicao" disable="true" layoutX="279.0" layoutY="139.0" prefHeight="34.0" prefWidth="204.0" />
+      <Label fx:id="labelFormaPagamento" disable="true" layoutX="282.0" layoutY="122.0" text="Forma Pagamento:" />
+      <Label fx:id="msgErroHora" alignment="BOTTOM_RIGHT" layoutX="128.0" layoutY="181.0" prefHeight="20.0" prefWidth="119.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="msgErroPreco" alignment="BOTTOM_RIGHT" layoutX="329.0" layoutY="181.0" prefHeight="20.0" prefWidth="151.0" textAlignment="RIGHT" textFill="#f74d4d">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputCodigoVendaEdicao" layoutX="45.0" layoutY="79.0" prefHeight="34.0" prefWidth="170.0" />
+      <Label fx:id="labelCodigoVenda" layoutX="49.0" layoutY="62.0" text="Código do Venda:" />
+      <Button fx:id="btnPesquisaCodigoVenda" layoutX="215.0" layoutY="79.0" mnemonicParsing="false" onAction="#pesquisarCodigoVenda" prefHeight="34.0" prefWidth="34.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <DatePicker fx:id="inputDataEdicao" disable="true" editable="false" layoutX="45.0" layoutY="139.0" prefHeight="34.0" prefWidth="204.0" />
+   </children>
+</Pane>
