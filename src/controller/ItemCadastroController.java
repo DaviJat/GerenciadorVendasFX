@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Geral;
-import model.Item;
 import model.Produto;
 
 public class ItemCadastroController {
@@ -106,7 +105,7 @@ public class ItemCadastroController {
     		msgErroQuantidade.setText("");
     		msgErroProduto.setText("");
     		
-    		int indexProduto = Produto.buscaProduto(codigoProduto);
+    		int indexProduto = Facade.buscaProduto(codigoProduto);
 			listaProdutos.add(Produto.getProduto(indexProduto));
 			
 			listaQuantidades.add(quantidadeProduto);
@@ -131,13 +130,13 @@ public class ItemCadastroController {
     	
     	String codigoProduto = inputCodigoProdutoCadastro.getText();
     	
-    	if (Produto.validaProduto(codigoProduto)) {
+    	if (Facade.validaProduto(codigoProduto)) {
     		
     		msgErroProduto.setText("");
     		
     		ArrayList<Produto> listaProdutos = Produto.getListaProduto();
     		
-    		int index = Produto.buscaProduto(codigoProduto);
+    		int index = Facade.buscaProduto(codigoProduto);
     		
     		inputNomeProdutoCadastro.setText(listaProdutos.get(index).getNome());
     		
@@ -187,8 +186,7 @@ public class ItemCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Item novoItem = new Item(codigo, nome, precoFormatado, descricao, categoria, listaProdutosQuantidades, listaProdutos, listaQuantidades);
-    		Item.cadastrar(novoItem);
+    		Facade.cadastrarItem(codigo, nome, precoFormatado, descricao, categoria, listaProdutosQuantidades, listaProdutos, listaQuantidades);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
     	    stage.close();

@@ -37,7 +37,7 @@ public class ItemExclusaoController {
     		
     		String codigo = inputCodigoExclusao.getText();
     		
-    		Item.excluir(codigo);
+    		Facade.excluirItem(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();
@@ -51,13 +51,13 @@ public class ItemExclusaoController {
     	
     	String codigo = inputCodigoExclusao.getText();
     	
-    	if (Item.validaItem(codigo)) {
+    	if (Facade.validaItem(codigo)) {
     		
     		msgErro.setText("");
     		
     		ArrayList<Item> listaItem = Item.getListaItem();
     		
-    		int index = Item.buscaItem(codigo);
+    		int index = Facade.buscaItem(codigo);
     		
     		inputNomeItem.setText(listaItem.get(index).getNome());
     		

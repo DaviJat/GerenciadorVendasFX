@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Fornecedor;
 import model.Geral;
-import model.Produto;
 
 public class ProdutoCadastroController {
 	
@@ -72,13 +71,13 @@ public class ProdutoCadastroController {
     	
     	String codigoFornecedor = inputCodigoFornecedorCadastro.getText();
     	
-    	if (Fornecedor.validaFornecedor(codigoFornecedor)) {
+    	if (Facade.validaFornecedor(codigoFornecedor)) {
     		
     		msgErroFornecedor.setText("");
     		
     		ArrayList<Fornecedor> listaFornecedores = Fornecedor.getListaFornecedor();
     		
-    		int index = Fornecedor.buscaFornecedor(codigoFornecedor);
+    		int index = Facade.buscaFornecedor(codigoFornecedor);
     		
     		inputNomeFornecedorCadastro.setText(listaFornecedores.get(index).getNome());
     		
@@ -129,8 +128,7 @@ public class ProdutoCadastroController {
     		
     		String validadeString = validade.toString();
     		
-    		Produto novoProduto = new Produto(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
-    		Produto.cadastrar(novoProduto);
+    		Facade.cadastrarProduto(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
     	    stage.close();

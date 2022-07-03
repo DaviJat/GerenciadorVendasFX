@@ -87,13 +87,13 @@ public class ProdutoEdicaoController {
     	
     	String codigoFornecedor = inputCodigoFornecedorEdicao.getText();
     	
-    	if (Fornecedor.validaFornecedor(codigoFornecedor)) {
+    	if (Facade.validaFornecedor(codigoFornecedor)) {
     		
     		msgErroFornecedor.setText("");
     		
     		ArrayList<Fornecedor> listaFornecedores = Fornecedor.getListaFornecedor();
     		
-    		int index = Fornecedor.buscaFornecedor(codigoFornecedor);
+    		int index = Facade.buscaFornecedor(codigoFornecedor);
     		
     		inputNomeFornecedorEdicao.setText(listaFornecedores.get(index).getNome());
     		
@@ -109,7 +109,7 @@ public class ProdutoEdicaoController {
     	
     	String codigo = inputCodigoProdutoEdicao.getText();
     	
-    	if (Produto.validaProduto(codigo)) {
+    	if (Facade.validaProduto(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -136,7 +136,7 @@ public class ProdutoEdicaoController {
     		 
     		ArrayList<Produto> listaProdutos = Produto.getListaProduto();
     		
-    		int index = Produto.buscaProduto(codigo);
+    		int index = Facade.buscaProduto(codigo);
     		
     		String nomeProduto = listaProdutos.get(index).getNome();
     		double preco = listaProdutos.get(index).getPreco();
@@ -202,7 +202,7 @@ public class ProdutoEdicaoController {
         	}  else {
         		String validadeString = validade.toString();
         		
-        		Produto.editar(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
+        		Facade.editarProduto(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
         		
         		Stage stage = (Stage)btnSalvar.getScene().getWindow();
         	    stage.close();

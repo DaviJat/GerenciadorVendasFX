@@ -37,7 +37,7 @@ public class ProdutoExclusaoController {
     		
     		String codigo = inputCodigoExclusao.getText();
     		
-    		Produto.excluir(codigo);
+    		Facade.excluirProduto(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();
@@ -51,13 +51,13 @@ public class ProdutoExclusaoController {
     	
     	String codigo = inputCodigoExclusao.getText();
     	
-    	if (Produto.validaProduto(codigo)) {
+    	if (Facade.validaProduto(codigo)) {
     		
     		msgErro.setText("");
     		
     		ArrayList<Produto> listaProdutos = Produto.getListaProduto();
     		
-    		int index = Produto.buscaProduto(codigo);
+    		int index = Facade.buscaProduto(codigo);
     		
     		inputNomeProduto.setText(listaProdutos.get(index).getNome());
     		

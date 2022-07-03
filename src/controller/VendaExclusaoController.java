@@ -29,7 +29,7 @@ public class VendaExclusaoController {
     	
     	if (Venda.validaVenda(codigo)) {
     		
-    		Venda.excluir(codigo);
+    		Facade.excluirVenda(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();

@@ -9,7 +9,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Usuario;
 
 public class UsuarioCadastroController {
 	
@@ -60,8 +59,7 @@ public class UsuarioCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Usuario novoUsuario = new Usuario(codigo, nome, senha, cargo);
-    		Usuario.cadastrar(novoUsuario);
+    		Facade.cadastroUsuario(codigo, nome, senha, cargo);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
     	    stage.close();

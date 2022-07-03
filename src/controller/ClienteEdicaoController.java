@@ -55,7 +55,7 @@ public class ClienteEdicaoController {
     void pesquisarCodigoCliente(ActionEvent event) {
     	String codigo = inputCodigoEdicao.getText();
     	
-    	if (Cliente.validaCliente(codigo)) {
+    	if (Facade.validaCliente(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -74,7 +74,7 @@ public class ClienteEdicaoController {
     		 
     		ArrayList<Cliente> listaClientes = Cliente.getListaCliente();
     		
-    		int index = Cliente.buscaCliente(codigo);
+    		int index = Facade.buscaCliente(codigo);
     		
     		String nome = listaClientes.get(index).getNome();
     		String cpf = listaClientes.get(index).getCpf();
@@ -113,7 +113,8 @@ public class ClienteEdicaoController {
 	    		
 	    	} else {
 	    		
-	    		Cliente.editar(codigo, nome, cpf, email, telefone);
+	    		
+	    		Facade.editarCliente(codigo, nome, cpf, email, telefone);
 	    		
 	    		Stage stage = (Stage)btnSalvar.getScene().getWindow();
 	    	    stage.close();

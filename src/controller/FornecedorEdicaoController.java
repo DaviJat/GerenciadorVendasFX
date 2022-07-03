@@ -50,7 +50,7 @@ public class FornecedorEdicaoController {
     	
     	String codigo = inputCodigoEdicao.getText();
     	
-    	if (Fornecedor.validaFornecedor(codigo)) {
+    	if (Facade.validaFornecedor(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -67,7 +67,7 @@ public class FornecedorEdicaoController {
     		 
     		ArrayList<Fornecedor> listaFornecedores = Fornecedor.getListaFornecedor();
     		
-    		int index = Fornecedor.buscaFornecedor(codigo);
+    		int index = Facade.buscaFornecedor(codigo);
     		
     		String nome = listaFornecedores.get(index).getNome();
     		String cnpj = listaFornecedores.get(index).getCnpj();
@@ -103,7 +103,8 @@ public class FornecedorEdicaoController {
 	    		
 	    	} else {
 	    		
-	    		Fornecedor.editar(codigo, nome, cnpj, endereco);
+	    		
+	    		Facade.editarFornecedor(codigo, nome, cnpj, endereco);
 	    		
 	    		Stage stage = (Stage)btnSalvar.getScene().getWindow();
 	    	    stage.close();

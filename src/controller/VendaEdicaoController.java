@@ -65,7 +65,7 @@ public class VendaEdicaoController {
     	
     	String codigo = inputCodigoVendaEdicao.getText();
     	
-    	if (Venda.validaVenda(codigo)) {
+    	if (Facade.validaVenda(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -86,7 +86,7 @@ public class VendaEdicaoController {
     		 
     		ArrayList<Venda> listaVendas = Venda.getListaVenda();
     		
-    		int index = Venda.buscaVenda(codigo);
+    		int index = Facade.buscaVenda(codigo);
     		
     		String dataString = listaVendas.get(index).getData();
     		String hora = listaVendas.get(index).getHora();
@@ -147,7 +147,7 @@ public class VendaEdicaoController {
         		
         		String dataString = data.toString();
         		
-        		Venda.editar(codigo, horaFormatada, dataString, precoFormatado, formaPagamento);
+        		Facade.editarVenda(codigo, horaFormatada, dataString, precoFormatado, formaPagamento);
         		
         		Stage stage = (Stage)btnSalvar.getScene().getWindow();
         	    stage.close();

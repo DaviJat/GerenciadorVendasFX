@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Fornecedor;
 
 public class FornecedorCadastroController {
 	
@@ -48,8 +47,7 @@ public class FornecedorCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Fornecedor novoFornecedor = new Fornecedor(codigo, nome, cnpj, endereco);
-    		Fornecedor.cadastrar(novoFornecedor);
+    		Facade.cadastrarFornecedor(codigo, nome, cnpj, endereco);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
     	    stage.close();

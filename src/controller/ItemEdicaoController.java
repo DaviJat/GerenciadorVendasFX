@@ -61,7 +61,7 @@ public class ItemEdicaoController {
     	
     	String codigo = inputCodigoItemEdicao.getText();
     	
-    	if (Item.validaItem(codigo)) {
+    	if (Facade.validaItem(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -82,7 +82,7 @@ public class ItemEdicaoController {
     		 
     		ArrayList<Item> listaItens = Item.getListaItem();
     		
-    		int index = Item.buscaItem(codigo);
+    		int index = Facade.buscaItem(codigo);
     		
     		String nomeItem = listaItens.get(index).getNome();
     		double preco = listaItens.get(index).getPreco();
@@ -131,7 +131,7 @@ public class ItemEdicaoController {
         		
         	}  else {
         		
-        		Item.editar(codigo, nomeItem, precoFormatado, categoria, descricao);
+        		Facade.editarItem(codigo, nomeItem, precoFormatado, categoria, descricao);
         		
         		Stage stage = (Stage)btnSalvar.getScene().getWindow();
         	    stage.close();

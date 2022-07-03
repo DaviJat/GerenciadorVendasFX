@@ -62,7 +62,7 @@ public class UsuarioEdicaoController {
     	
     	String codigo = inputCodigoEdicao.getText();
     	
-    	if (Usuario.validaUsuario(codigo)) {
+    	if (Facade.validaUsuario(codigo)) {
     		
     		msgErro.setText("");
     		
@@ -79,7 +79,7 @@ public class UsuarioEdicaoController {
     		 
     		ArrayList<Usuario> listaUsuarios = Usuario.getListaUsuario();
     		
-    		int index = Usuario.buscaUsuario(codigo);
+    		int index = Facade.buscaUsuario(codigo);
     		
     		String nome = listaUsuarios.get(index).getNome();
     		String senha = listaUsuarios.get(index).getSenha();
@@ -114,7 +114,7 @@ public class UsuarioEdicaoController {
 	    		
 	    	} else {
 	    		
-	    		Usuario.editar(codigo, nome, senha, cargo);
+	    		Facade.editarUsuario(codigo, nome, senha, cargo);
 	    		
 	    		Stage stage = (Stage)btnSalvar.getScene().getWindow();
 	    	    stage.close();

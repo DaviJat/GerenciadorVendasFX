@@ -14,7 +14,6 @@ import model.Cliente;
 import model.Geral;
 import model.Item;
 import model.Produto;
-import model.Venda;
 
 public class VendaCadastroController {
 	
@@ -108,14 +107,14 @@ public class VendaCadastroController {
     		msgErroItem.setText("");
     		msgErro.setText("Digite o código do Item");
     		
-    	} else if (Item.validaItem(codigoItem) == false) {
+    	} else if (Facade.validaItem(codigoItem) == false) {
     		
     		inputNomeItemCadastro.setText("");
     		msgErroItem.setText("Código Inválido");
     		
     	} else {
     			
-			int index = Item.buscaItem(codigoItem);
+			int index = Facade.buscaItem(codigoItem);
 		
 		
 			Item item = Item.getItem(index);
@@ -139,7 +138,7 @@ public class VendaCadastroController {
 				
 				} else {
 					
-					int indexItem = Item.buscaItem(codigoItem);
+					int indexItem = Facade.buscaItem(codigoItem);
 					listaItens.add(Item.getItem(indexItem));
 					
 					double precoItem = Item.retornaPrecoItem(codigoItem);
@@ -168,13 +167,13 @@ public class VendaCadastroController {
     	
     	String codigoCliente = inputCodigoClienteCadastro.getText();
     	
-    	if (Cliente.validaCliente(codigoCliente)) {
+    	if (Facade.validaCliente(codigoCliente)) {
     		
     		msgErroCliente.setText("");
     		
     		ArrayList<Cliente> listaClientes = Cliente.getListaCliente();
     		
-    		int index = Cliente.buscaCliente(codigoCliente);
+    		int index = Facade.buscaCliente(codigoCliente);
     		
     		inputNomeClienteCadastro.setText(listaClientes.get(index).getNome());
     		
@@ -190,13 +189,13 @@ public class VendaCadastroController {
     	
     	String codigoItem = inputCodigoItemCadastro.getText();
     	
-    	if (Item.validaItem(codigoItem)) {
+    	if (Facade.validaItem(codigoItem)) {
     		
     		msgErroCliente.setText("");
     		
     		ArrayList<Item> listaItens = Item.getListaItem();
     		
-    		int index = Item.buscaItem(codigoItem);
+    		int index = Facade.buscaItem(codigoItem);
     		
     		inputNomeItemCadastro.setText(listaItens.get(index).getNome());
     		
@@ -261,9 +260,7 @@ public class VendaCadastroController {
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Venda novaVenda = new Venda(codigo, dataString, horaFormatada, precoFormatado, formaPagamento, nomeCliente, listaNomesItens, listaItens);
-    		Venda.registrar(novaVenda);
-    		
+    		Facade.cadastrarVenda(codigo, dataString, horaFormatada, precoFormatado, formaPagamento, nomeCliente, listaNomesItens, listaItens);	
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
     	    stage.close();

@@ -37,7 +37,7 @@ public class UsuarioExclusaoController {
     		
     		String codigo = inputCodigoExclusao.getText();
     		
-    		Usuario.excluir(codigo);
+    		Facade.excluirUsuario(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();

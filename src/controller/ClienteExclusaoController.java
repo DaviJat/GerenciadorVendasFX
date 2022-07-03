@@ -36,8 +36,8 @@ public class ClienteExclusaoController {
     	if (inputCodigoExclusao.getText() != "") {
     		
     		String codigo = inputCodigoExclusao.getText();
-    		
-    		Cliente.excluir(codigo);
+    	
+    		Facade.excluirCliente(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();
@@ -51,13 +51,13 @@ public class ClienteExclusaoController {
     	
     	String codigo = inputCodigoExclusao.getText();
     	
-    	if (Cliente.validaCliente(codigo)) {
+    	if (Facade.validaCliente(codigo)) {
     		
     		msgErro.setText("");
     		
     		ArrayList<Cliente> listaCliente = Cliente.getListaCliente();
     		
-    		int index = Cliente.buscaCliente(codigo);
+    		int index = Facade.buscaCliente(codigo);
     		
     		inputNomeCliente.setText(listaCliente.get(index).getNome());
     		

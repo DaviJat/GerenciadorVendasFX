@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="controller.RelatorioMenuController">
+   <children>
+      <Label layoutX="139.0" layoutY="27.0" text="Gerenciamento de Relatórios" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="269.0" layoutY="100.0" text="ESTOQUE:" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="100.0" text="VENDAS:" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="415.0" layoutY="100.0" text="FORNECEDORES:" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnVendasGeral" layoutX="55.0" layoutY="153.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasGeral" text="Relatório Geral" />
+      <Button fx:id="btnVendasPorCategoria" layoutX="41.0" layoutY="251.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasPorCategoria" text="Filtrar por Categoria" />
+      <Button fx:id="btnVendasPorPeriodo" layoutX="46.0" layoutY="201.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasPorPeriodo" text="Filtrar por Período" />
+      <Button fx:id="brnEstoqueGeral" layoutX="253.0" layoutY="153.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoqueGeral" text="Relatório Geral" />
+      <Button fx:id="btnEstoquePorProduto" layoutX="245.0" layoutY="201.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoquePorProduto" text="Filtrar por Produto" />
+      <Button fx:id="btnFornecedoresGeral" layoutX="392.0" layoutY="153.0" mnemonicParsing="false" onAction="#gerarRelatorioFornecedoresGeral" text="Relatório de Fornecedores" />
+      <Button fx:id="btnEstoquePorValidade" layoutX="244.0" layoutY="251.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoquePorValidade" text="Filtrar por Validade" />
+      <Button fx:id="btnForncedoresPorProduto" layoutX="409.0" layoutY="201.0" mnemonicParsing="false" onAction="#gerarRelatorioFornecedoresPorProduto" text="Filtrar por Produto" />
+   </children>
+</Pane>

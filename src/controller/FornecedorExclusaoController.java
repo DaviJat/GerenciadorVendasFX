@@ -37,7 +37,7 @@ public class FornecedorExclusaoController {
     		
     		String codigo = inputCodigoExclusao.getText();
     		
-    		Fornecedor.excluir(codigo);
+    		Facade.excluirFornecedor(codigo);
     		
     		Stage stage = (Stage)btnExcluir.getScene().getWindow();
     	    stage.close();
@@ -52,13 +52,13 @@ public class FornecedorExclusaoController {
     	
     	String codigo = inputCodigoExclusao.getText();
     	
-    	if (Fornecedor.validaFornecedor(codigo)) {
+    	if (Facade.validaFornecedor(codigo)) {
     		
     		msgErro.setText("");
     		
     		ArrayList<Fornecedor> listaFornecedores = Fornecedor.getListaFornecedor();
     		
-    		int index = Fornecedor.buscaFornecedor(codigo);
+    		int index = Facade.buscaFornecedor(codigo);
     		
     		inputNomeFornecedor.setText(listaFornecedores.get(index).getNome());
     		
