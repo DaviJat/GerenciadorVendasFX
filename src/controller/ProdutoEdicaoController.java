@@ -176,9 +176,9 @@ public class ProdutoEdicaoController {
     		
     		double precoFormatado = Geral.validaDouble(preco);
     		double estoqueFormatado = Geral.validaDouble(estoque);
-    		String validadeString = validade.toString();
+    		
     	    
-        	if (nome == "" || preco == "" || validadeString == "" || estoque == "" || nomeFornecedor == "") {
+        	if (nome == "" || preco == "" || validade == null || estoque == "" || nomeFornecedor == "") {
         		
         		msgErro.setText("");
         		msgErroPreco.setText("");
@@ -200,6 +200,7 @@ public class ProdutoEdicaoController {
         		} 
         		
         	}  else {
+        		String validadeString = validade.toString();
         		
         		Produto.editar(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
         		

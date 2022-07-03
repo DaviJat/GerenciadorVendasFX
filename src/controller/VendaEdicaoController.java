@@ -124,9 +124,7 @@ public class VendaEdicaoController {
     		double precoFormatado = Geral.validaDouble(preco);
     		String horaFormatada = Geral.validaHora(hora);
     		
-    		String dataString = data.toString();
-    	    
-        	if (dataString == "" || hora == "" || preco == "" || formaPagamento == "") {
+        	if (data == null || hora == "" || preco == "" || formaPagamento == "") {
         		
         		msgErro.setText("");
         		msgErroPreco.setText("");
@@ -146,6 +144,8 @@ public class VendaEdicaoController {
         		} 
         		
         	}  else {
+        		
+        		String dataString = data.toString();
         		
         		Venda.editar(codigo, horaFormatada, dataString, precoFormatado, formaPagamento);
         		

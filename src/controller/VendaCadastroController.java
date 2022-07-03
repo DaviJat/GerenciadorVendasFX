@@ -197,10 +197,8 @@ public class VendaCadastroController {
 		
 		double precoFormatado = Geral.validaDouble(preco);
 		String horaFormatada = Geral.validaHora(hora);
-		
-		String dataString = data.toString();
 	    
-    	if (dataString == "" || hora == "" || preco == "" || formaPagamento == "" || nomeCliente == "") {
+    	if (data == null || hora == "" || preco == "" || formaPagamento == "" || nomeCliente == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -236,6 +234,8 @@ public class VendaCadastroController {
     		msgErro.setText("Insira pelo menos um Item!");
     		
     	} else {
+    		
+    		String dataString = data.toString();
     		
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);

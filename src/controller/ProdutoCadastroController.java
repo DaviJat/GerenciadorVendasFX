@@ -100,9 +100,8 @@ public class ProdutoCadastroController {
 		
 		double precoFormatado = Geral.validaDouble(preco);
 		double estoqueFormatado = Geral.validaDouble(estoque);
-		String validadeString = validade.toString();
 	    
-    	if (nome == "" || preco == "" || validadeString == "" || estoque == "" || nomeFornecedor == "") {
+    	if (nome == "" || preco == "" || validade == null || estoque == "" || nomeFornecedor == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -127,6 +126,8 @@ public class ProdutoCadastroController {
     		
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
+    		
+    		String validadeString = validade.toString();
     		
     		Produto novoProduto = new Produto(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
     		Produto.cadastrar(novoProduto);
