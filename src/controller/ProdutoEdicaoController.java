@@ -1,10 +1,12 @@
 package controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,7 +44,7 @@ public class ProdutoEdicaoController {
     private TextField inputNomeProdutoEdicao;
 
     @FXML
-    private TextField inputValidadeEdicao;
+    private DatePicker inputValidadeEdicao;
 
     @FXML
     private Label labelCodigoFornecedor;
@@ -138,14 +140,16 @@ public class ProdutoEdicaoController {
     		
     		String nomeProduto = listaProdutos.get(index).getNome();
     		double preco = listaProdutos.get(index).getPreco();
-    		String validade = listaProdutos.get(index).getValidade();
+    		String validadeString = listaProdutos.get(index).getValidade();
     		double estoque = listaProdutos.get(index).getEstoque();
     		String nomeFornecedor = listaProdutos.get(index).getNomeFornecedor();
+    		
+    		LocalDate validade = LocalDate.parse(validadeString);
     		
     		inputNomeProdutoEdicao.setText(nomeProduto);
     		inputNomeFornecedorEdicao.setText(nomeFornecedor);
     		inputPrecoEdicao.setText(Double.toString(preco));
-    		inputValidadeEdicao.setText(validade);
+    		inputValidadeEdicao.setValue(validade);
     		inputEstoqueEdicao.setText(Double.toString(estoque));
     		
     		btnSalvar.setDisable(false);
@@ -166,15 +170,15 @@ public class ProdutoEdicaoController {
     		String codigo = inputCodigoProdutoEdicao.getText();
     		String nome = inputNomeProdutoEdicao.getText();
     		String preco = inputPrecoEdicao.getText();
-    		String validade = inputValidadeEdicao.getText();
+    		LocalDate validade = inputValidadeEdicao.getValue();
     		String estoque = inputEstoqueEdicao.getText();
     		String nomeFornecedor = inputNomeFornecedorEdicao.getText();
     		
     		double precoFormatado = Geral.validaDouble(preco);
     		double estoqueFormatado = Geral.validaDouble(estoque);
-    		String validadeFormatada = Geral.validaData(validade);
+    		String validadeString = validade.toString();
     	    
-        	if (nome == "" || preco == "" || validade == "" || estoque == "" || nomeFornecedor == "") {
+        	if (nome == "" || preco == "" || validadeString == "" || estoque == "" || nomeFornecedor == "") {
         		
         		msgErro.setText("");
         		msgErroPreco.setText("");
@@ -182,7 +186,7 @@ public class ProdutoEdicaoController {
         		msgErroValidade.setText("");
         		msgErro.setText("Preencha todos os campos!");
         		
-        	} else if (precoFormatado < 0 || estoqueFormatado < 0 || validadeFormatada == null) {
+        	} else if (precoFormatado < 0 || estoqueFormatado < 0) {
     	    	
         		msgErro.setText("");
         		msgErroPreco.setText("");
@@ -193,13 +197,11 @@ public class ProdutoEdicaoController {
         			msgErroEstoque.setText("Valor Inválido");
         		} else if (precoFormatado < 0) {
         			msgErroPreco.setText("Valor Inválido");
-        		} else if (validadeFormatada == null) {
-        			msgErroValidade.setText("Data inválida");
-        		}
+        		} 
         		
         	}  else {
         		
-        		Produto.editar(codigo, nome, precoFormatado, validadeFormatada, estoqueFormatado, nomeFornecedor);
+        		Produto.editar(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
         		
         		Stage stage = (Stage)btnSalvar.getScene().getWindow();
         	    stage.close();

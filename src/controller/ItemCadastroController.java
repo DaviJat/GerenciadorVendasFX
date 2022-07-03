@@ -78,18 +78,18 @@ public class ItemCadastroController {
     @FXML
     void adicionarProduto(ActionEvent event) {
     	
-    	String nomeProduto = inputNomeProdutoCadastro.getText();
     	String quantidadeProduto = inputQuantidadeProdutoCadastro.getText();
+    	String codigoProduto = inputCodigoProdutoCadastro.getText();
     	
     	double quantidadeFormatada = Geral.validaDouble(quantidadeProduto);
     	
-    	if (quantidadeProduto == "" || nomeProduto == "") {
+    	if (quantidadeProduto == "" || codigoProduto == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
     		msgErroQuantidade.setText("");
     		msgErroProduto.setText("");
-    		msgErro.setText("Selecione um produto e digite a quantidade");
+    		msgErro.setText("Digite o código do produto e sua quantidade");
     		
     	} else if (quantidadeFormatada < 0) {
     		
@@ -106,12 +106,12 @@ public class ItemCadastroController {
     		msgErroQuantidade.setText("");
     		msgErroProduto.setText("");
     		
-    		String codigoProduto = inputCodigoProdutoCadastro.getText();
-    		
     		int indexProduto = Produto.buscaProduto(codigoProduto);
 			listaProdutos.add(Produto.getProduto(indexProduto));
 			
 			listaQuantidades.add(quantidadeProduto);
+			
+			String nomeProduto = Produto.getProduto(indexProduto).getNome();
 			
 			String stringNomeQuantidadeProduto = nomeProduto + " (" + quantidadeProduto + " kg)";
 			listaProdutosQuantidades.add(stringNomeQuantidadeProduto);
@@ -140,8 +140,6 @@ public class ItemCadastroController {
     		int index = Produto.buscaProduto(codigoProduto);
     		
     		inputNomeProdutoCadastro.setText(listaProdutos.get(index).getNome());
-    		
-    		inputCodigoProdutoCadastro.setEditable(false);
     		
     	} else {
     		inputNomeProdutoCadastro.setText("");

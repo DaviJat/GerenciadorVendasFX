@@ -1,10 +1,12 @@
 package controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -45,7 +47,7 @@ public class VendaCadastroController {
     private TextField inputCodigoItemCadastro;
 
     @FXML
-    private TextField inputDataCadastro;
+    private DatePicker inputDataCadastro;
 
     @FXML
     private TextField inputFormaPagamentoCadastro;
@@ -94,9 +96,9 @@ public class VendaCadastroController {
     @FXML
     void adicionarItem(ActionEvent event) {
     	
-    	String nomeItem = inputNomeItemCadastro.getText();
+    	String codigoItem = inputCodigoItemCadastro.getText();
     	
-    	if (nomeItem == "") {
+    	if (codigoItem == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -104,7 +106,7 @@ public class VendaCadastroController {
     		msgErroHora.setText("");
     		msgErroCliente.setText("");
     		msgErroItem.setText("");
-    		msgErro.setText("Selecione um produto e digite a quantidade");
+    		msgErro.setText("Digite o código do Item");
     		
     	} else {
     		
@@ -115,14 +117,14 @@ public class VendaCadastroController {
     		msgErroCliente.setText("");
     		msgErroItem.setText("");
     		
-    		String codigoItem = inputCodigoItemCadastro.getText();
-    		
     		int indexItem = Item.buscaItem(codigoItem);
 			listaItens.add(Item.getItem(indexItem));
 			
 			double precoItem = Item.retornaPrecoItem(codigoItem);
 			
 			precoTotal += precoItem;
+			
+			String nomeItem = Item.getItem(indexItem).getNome();
 			
 			listaNomesItens.add(nomeItem);
     		
@@ -182,17 +184,18 @@ public class VendaCadastroController {
     @FXML
     void salvaRegistroVenda(ActionEvent event) {
     	
-    	String data = inputDataCadastro.getText();
+    	LocalDate data = inputDataCadastro.getValue();
 		String hora = inputHoraCadastro.getText();
 		String preco = inputPrecoCadastro.getText();
 		String formaPagamento = inputFormaPagamentoCadastro.getText();
 		String nomeCliente = inputNomeClienteCadastro.getText();
 		
 		double precoFormatado = Geral.validaDouble(preco);
-		String dataFormatada = Geral.validaData(data);
 		String horaFormatada = Geral.validaHora(hora);
+		
+		String dataString = data.toString();
 	    
-    	if (data == "" || hora == "" || preco == "" || formaPagamento == "" || nomeCliente == "") {
+    	if (dataString == "" || hora == "" || preco == "" || formaPagamento == "" || nomeCliente == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -202,7 +205,7 @@ public class VendaCadastroController {
     		msgErroItem.setText("");
     		msgErro.setText("Preencha todos os campos!");
     		
-    	} else if (precoFormatado < 0 || dataFormatada == null || horaFormatada == null) {
+    	} else if (precoFormatado < 0 || horaFormatada == null) {
 	    	
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -211,9 +214,7 @@ public class VendaCadastroController {
     		msgErroCliente.setText("");
     		msgErroItem.setText("");
     		
-    		if (dataFormatada == null) {
-    			msgErroData.setText("Data inválida");
-    		} else if (horaFormatada == null) {
+    		if (horaFormatada == null) {
     			msgErroHora.setText("Hora inválida");
     		} else if (precoFormatado < 0) {
     			msgErroPreco.setText("Valor Inválido");
@@ -249,7 +250,7 @@ public class VendaCadastroController {
 				}
 			}
     		
-    		Venda novaVenda = new Venda(codigo, dataFormatada, horaFormatada, precoFormatado, formaPagamento, nomeCliente, listaNomesItens, listaItens);
+    		Venda novaVenda = new Venda(codigo, dataString, horaFormatada, precoFormatado, formaPagamento, nomeCliente, listaNomesItens, listaItens);
     		Venda.registrar(novaVenda);
     		
     		

@@ -1,10 +1,12 @@
 package controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,7 +44,7 @@ public class ProdutoCadastroController {
     private TextField inputProdutoCadastro;
 
     @FXML
-    private TextField inputValidadeCadastro;
+    private DatePicker inputValidadeCadastro;
 
     @FXML
     private Label labelCodigoFornecedor;
@@ -92,15 +94,15 @@ public class ProdutoCadastroController {
     	
     	String nome = inputProdutoCadastro.getText();
 		String preco = inputPrecoCadastro.getText();
-		String validade = inputValidadeCadastro.getText();
+		LocalDate validade = inputValidadeCadastro.getValue();
 		String estoque = inputEstoqueCadastro.getText();
 		String nomeFornecedor = inputNomeFornecedorCadastro.getText();
 		
 		double precoFormatado = Geral.validaDouble(preco);
 		double estoqueFormatado = Geral.validaDouble(estoque);
-		String validadeFormatada = Geral.validaData(validade);
+		String validadeString = validade.toString();
 	    
-    	if (nome == "" || preco == "" || validade == "" || estoque == "" || nomeFornecedor == "") {
+    	if (nome == "" || preco == "" || validadeString == "" || estoque == "" || nomeFornecedor == "") {
     		
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -108,7 +110,7 @@ public class ProdutoCadastroController {
     		msgErroValidade.setText("");
     		msgErro.setText("Preencha todos os campos!");
     		
-    	} else if (precoFormatado < 0 || estoqueFormatado < 0 || validadeFormatada == null) {
+    	} else if (precoFormatado < 0 || estoqueFormatado < 0) {
 	    	
     		msgErro.setText("");
     		msgErroPreco.setText("");
@@ -119,16 +121,14 @@ public class ProdutoCadastroController {
     			msgErroEstoque.setText("Valor Inválido");
     		} else if (precoFormatado < 0) {
     			msgErroPreco.setText("Valor Inválido");
-    		} else if (validadeFormatada == null) {
-    			msgErroValidade.setText("Data inválida");
-    		}
+    		} 
     		
     	}  else {
     		
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
     		
-    		Produto novoProduto = new Produto(codigo, nome, precoFormatado, validadeFormatada, estoqueFormatado, nomeFornecedor);
+    		Produto novoProduto = new Produto(codigo, nome, precoFormatado, validadeString, estoqueFormatado, nomeFornecedor);
     		Produto.cadastrar(novoProduto);
     		
     		Stage stage = (Stage)btnSalvar.getScene().getWindow();
