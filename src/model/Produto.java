@@ -246,16 +246,13 @@ public class Produto {
 		double quantidade = Double.parseDouble(quantidadeString);
 		
 		int indice = 0;
-		
-        if(quantidade <= produtoVenda.getEstoque()) {
         	
-        	for(Produto produto : listaProduto) {
-        		if (produto.equals(produtoVenda)) {
-        			produto.listaProduto.get(indice).estoque -= quantidade;
-        		}
-        		indice ++;
-        	}
-        }
+    	for(Produto produto : listaProduto) {
+    		if (produto.equals(produtoVenda)) {
+    			produto.listaProduto.get(indice).estoque -= quantidade;
+    		}
+    		indice ++;
+    	}
 	}
 	
 	/**

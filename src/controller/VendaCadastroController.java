@@ -249,9 +249,24 @@ public class VendaCadastroController {
 				
 				for(Produto produto : listaProdutos){
 					
-					Produto.removerEstoque(produto, listaQuantidades.get(indice));
-					indice ++;
+					double quantidade = Double.parseDouble(listaQuantidades.get(indice));
 					
+					if(quantidade <= produto.getEstoque()) {
+					
+						Produto.removerEstoque(produto, listaQuantidades.get(indice));
+						indice ++;
+					
+					} else {
+						
+						msgErro.setText("");
+			    		msgErroPreco.setText("");
+			    		msgErroData.setText("");
+			    		msgErroHora.setText("");
+			    		msgErroCliente.setText("");
+			    		msgErroItem.setText("");
+			    		msgErro.setText("Não é existem produtos suficientes no estoque");
+						
+					}
 				}
 			}
     		
