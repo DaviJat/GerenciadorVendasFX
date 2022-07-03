@@ -114,33 +114,54 @@ public class VendaCadastroController {
     		msgErroItem.setText("Código Inválido");
     		
     	} else {
-    		
-    		msgErro.setText("");
-    		msgErroPreco.setText("");
-    		msgErroData.setText("");
-    		msgErroHora.setText("");
-    		msgErroCliente.setText("");
-    		msgErroItem.setText("");
-    		
-    		int indexItem = Item.buscaItem(codigoItem);
-			listaItens.add(Item.getItem(indexItem));
+    			
+			int index = Item.buscaItem(codigoItem);
+		
+		
+			Item item = Item.getItem(index);
 			
-			double precoItem = Item.retornaPrecoItem(codigoItem);
+			ArrayList<Produto> listaProdutos = item.getListaProdutosItem();
+			ArrayList<String> listaQuantidades = item.getListaQuantidadesProdutos();
 			
-			precoTotal += precoItem;
-			
-			String nomeItem = Item.getItem(indexItem).getNome();
-			
-			listaNomesItens.add(nomeItem);
-    		
-    		inputNomeItemCadastro.setText("");
-    		inputCodigoItemCadastro.setText("");
-    		inputCodigoItemCadastro.setEditable(true);
-    		inputPrecoCadastro.setText(Double.toString(precoTotal));
-    	}
+			for(Produto produto : listaProdutos){
+				
+				double quantidade = Double.parseDouble(listaQuantidades.get(index));
+				
+				if((quantidade <= produto.getEstoque()) == false) {
+				
+					msgErro.setText("");
+		    		msgErroPreco.setText("");
+		    		msgErroData.setText("");
+		    		msgErroHora.setText("");
+		    		msgErroCliente.setText("");
+		    		msgErroItem.setText("");
+		    		msgErro.setText("Não existem produtos suficientes no estoque para produzir este item");
+				
+				} else {
+					
+					int indexItem = Item.buscaItem(codigoItem);
+					listaItens.add(Item.getItem(indexItem));
+					
+					double precoItem = Item.retornaPrecoItem(codigoItem);
+					
+					precoTotal += precoItem;
+					
+					String nomeItem = Item.getItem(indexItem).getNome();
+					
+					listaNomesItens.add(nomeItem);
+		    		
+		    		inputNomeItemCadastro.setText("");
+		    		inputCodigoItemCadastro.setText("");
+		    		inputCodigoItemCadastro.setEditable(true);
+		    		inputPrecoCadastro.setText(Double.toString(precoTotal));
+					
+					Produto.removerEstoque(produto, listaQuantidades.get(index));
+					
+				}
+			}
+		}
+	}
     	
-    	
-    }
 
     @FXML
     void pesquisarCodigoCliente(ActionEvent event) {
@@ -239,36 +260,6 @@ public class VendaCadastroController {
     		
     		geraCodigo();
     		String codigo = Integer.toString(contadorCodigo);
-    		
-    		for(Item item : listaItens){
-				
-				ArrayList<Produto> listaProdutos = item.getListaProdutosItem();
-				ArrayList<String> listaQuantidades = item.getListaQuantidadesProdutos();
-				
-				int indice = 0;
-				
-				for(Produto produto : listaProdutos){
-					
-					double quantidade = Double.parseDouble(listaQuantidades.get(indice));
-					
-					if(quantidade <= produto.getEstoque()) {
-					
-						Produto.removerEstoque(produto, listaQuantidades.get(indice));
-						indice ++;
-					
-					} else {
-						
-						msgErro.setText("");
-			    		msgErroPreco.setText("");
-			    		msgErroData.setText("");
-			    		msgErroHora.setText("");
-			    		msgErroCliente.setText("");
-			    		msgErroItem.setText("");
-			    		msgErro.setText("Não é existem produtos suficientes no estoque");
-						
-					}
-				}
-			}
     		
     		Venda novaVenda = new Venda(codigo, dataString, horaFormatada, precoFormatado, formaPagamento, nomeCliente, listaNomesItens, listaItens);
     		Venda.registrar(novaVenda);
