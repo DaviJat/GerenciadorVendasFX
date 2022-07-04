@@ -19,7 +19,14 @@ public class Venda {
 	private double precoTotal;
 	private String formaPagamento;
 	private String nomeCliente;
+	/**
+	 * Lista com os nomes dos itens da venda
+	 */
 	private ArrayList<String> listaNomesItensVenda;
+	
+	/**
+	 * Lista com os objetos (Item) que compoem a venda
+	 */
 	private ArrayList<Item> listaItensVenda;
 	
 	public static ArrayList<Venda> listaVenda = new ArrayList<Venda>();
@@ -34,6 +41,8 @@ public class Venda {
 	 * @param hora
 	 * @param precoTotal
 	 * @param formaPagamento
+	 * @param nomeCliente
+	 * @param nomesItens
 	 * @param itens
 	 */
 	public Venda(String codigo, String data, String hora, double precoTotal,
@@ -131,26 +140,50 @@ public class Venda {
 		this.formaPagamento = formaPagamento;
 	}
 	
+	/**
+	 * Getter que retorna o nomeCliente
+	 * @return
+	 */
 	public String getNomeCliente() {
 		return nomeCliente;
 	}
-
+	
+	/**
+	 * Setter do nomeCliente
+	 * @param nomeCliente
+	 */
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
 	
+	/**
+	 * Getter que retorna a listaNomesItensVenda
+	 * @return
+	 */
 	public ArrayList<String> getListaNomesItensVenda() {
 		return listaNomesItensVenda;
 	}
 
+	/**
+	 * Setter da listaNomesItensVenda
+	 * @param listaNomesItensVenda
+	 */
 	public void setListaNomesItensVenda(ArrayList<String> listaNomesItensVenda) {
 		this.listaNomesItensVenda = listaNomesItensVenda;
 	}
 	
+	/**
+	 * Getter que retorna a listaItensVenda
+	 * @return
+	 */
 	public ArrayList<Item> getListaItensVenda() {
 		return listaItensVenda;
 	}
-
+	
+	/**
+	 * Setter da listaItensVenda
+	 * @param listaItensVenda
+	 */
 	public void setListaItensVenda(ArrayList<Item> listaItensVenda) {
 		this.listaItensVenda = listaItensVenda;
 	}

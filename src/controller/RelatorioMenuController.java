@@ -31,6 +31,11 @@ import model.Item;
 import model.Produto;
 import model.Venda;
 
+/**
+ * Classe Controller do Menu de Relatórios
+ * @author Davi
+ *
+ */
 public class RelatorioMenuController {
 
 	@FXML

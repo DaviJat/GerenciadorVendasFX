@@ -114,8 +114,8 @@ public class Cliente {
 	}
 	
 	/** 
-	 * Setter do email
-	 * @param email
+	 * Setter do telefone
+	 * @param telefone
 	 */
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
