@@ -171,20 +171,6 @@ public class Cliente {
 	}
 	
 	/**
-	 * Printa a lista de Clientes
-	 */
-	public static void listar() {
-		for (Cliente cliente : listaCliente) {
-            
-            System.out.println("| Codigo: "       + cliente.getCodigo()+  
-			 				   " | Nome: "      + cliente.getNome() +  
-			 				   " | CPF: "      + cliente.getCpf() +  
-			 				   " | Email: "  + cliente.getEmail() +
-            				   " | Telefone: "  + cliente.getTelefone());
-        }
-	}
-	
-	/**
 	 * Recebe um código de Cliente e encontra o index do objeto com esse código,
 	 * na lista
 	 * @param codigo
@@ -219,27 +205,6 @@ public class Cliente {
 		
 		return validaCliente;
 		
-	}
-	
-	/**
-	 * Limpa lista de Cliente (Exclusiva para teste)
-	 */
-	public static void limpaLista() {
-		listaCliente.clear();
-	}
-	
-	/** 
-	 * Função que  retorna o nome do cliente buscando pelo código
-	 * @param codigo
-	 * @return
-	 */
-	public static String retornaNomeCliente(String codigoCliente) {
-		
-		int indice = Cliente.buscaCliente(codigoCliente);
-		
-		String nome = listaCliente.get(indice).nome;
-		
-		return nome;
 	}
 
 }

@@ -19,8 +19,20 @@ public class Item {
 	private double preco;
 	private String descricao;
 	private String categoria;
+	
+	/**
+	 * Lista com texto do nome do produto concatenado com sua respectiva quantidade
+	 */
 	private ArrayList<String> listaProdutosQuantidades;
+	
+	/**
+	 * Lista com os objetos (Produto) que compoem o item
+	 */
 	private ArrayList<Produto> listaProdutosItem;
+	
+	/**
+	 * Lista com as quantidades dos produtos que vão ser utilizadas no Item
+	 */
 	private ArrayList<String> listaQuantidadesProdutos;
 	
 	private static ArrayList<Item> listaItem = new ArrayList<Item>();
@@ -183,6 +195,22 @@ public class Item {
 		return listaItem;
 	}
 	
+	/**
+	 * Getter que retornar lista com o nome do produto e sua quantidade
+	 * @return
+	 */
+	public ArrayList<String> getListaProdutosQuantidades() {
+		return listaProdutosQuantidades;
+	}
+	
+	/**
+	 * Setter da listaProdutosQuantidades
+	 * @param listaProdutosQuantidades
+	 */
+	public void setListaProdutosQuantidades(ArrayList<String> listaProdutosQuantidades) {
+		this.listaProdutosQuantidades = listaProdutosQuantidades;
+	}
+	
 	//Fim Get/Set
 	
 	/**
@@ -225,34 +253,6 @@ public class Item {
 	}
 	
 	/**
-	 * Função que retorna lista com os nomes do produtos de um item e suas quantidades em gramas
-	 * @param listaProdutosItem
-	 * @param listaQuantitadesProdutos
-	 * @return
-	 */
-	public static ArrayList<String> retornaListaProdutosQuantidades() {
-		
-		ArrayList<String> listaProdutosQuantidades = new ArrayList<String>();
-		
-		for (Item item : listaItem) {
-			
-			ArrayList<Produto> listaProdutosItem = item.getListaProdutosItem();
-			ArrayList<String> listaQuantitadesProdutos = item.getListaQuantidadesProdutos();
-			
-			int index = 0;
-			
-			for(Produto produto : listaProdutosItem){
-				listaProdutosQuantidades.add(produto.getNome() + " " + listaQuantitadesProdutos.get(index) + "kg");
-				index ++;
-			}
-		}
-		
-		
-		
-		return listaProdutosQuantidades; 	
-	}
-	
-	/**
 	 * Recebe um código de Item e encontra o index do objeto com esse código,
 	 * na lista
 	 * @param codigo
@@ -290,50 +290,6 @@ public class Item {
 	}
 	
 	/**
-	 * Rentorna uma lista de produtos do item buscando pelo código do produto
-	 * @param codigo
-	 * @return
-	 */
-	public static ArrayList<Produto> retornaListaProdutos(String codigo){
-		
-		for (Item item : listaItem) {
-			if (item.getCodigo().equals(codigo)) {
-		    	return item.getListaProdutosItem(); 
-		    }  	
-		}
-		return null;
-	}
-	
-	/**
-	 * Retorna uma lista com as quantidades de cada produto na lista de produtos dos itens buscando 
-	 * pelo código
-	 * @param codigo
-	 * @return
-	 */
-	public static ArrayList<String> retornaListaQuantidades(String codigo){
-		
-		for (Item item : listaItem) {
-			if (item.getCodigo().equals(codigo)) {
-		    	return item.getListaQuantidadesProdutos(); 
-		    }  	
-		}
-		return null;
-	}
-	
-	/**
-	 *Retorna uma lista com as quantidades de cada produto na lista de produtos dos itens
-	 * @param contador
-	 * @param listaQuantidades
-	 * @return
-	 */
-	public static String retornaQuantidadeProduto(int contador, ArrayList<String> listaQuantidades){
-	
-	    String quantidades = listaQuantidades.get(contador);
-	    return quantidades;
-	
-	}
-	
-	/**
 	 * Faz uma busca através do código e retorna o preço do item
 	 * @param codigo
 	 * @return
@@ -342,17 +298,6 @@ public class Item {
 		int indice = Integer.parseInt(codigo) - 1;
 		double preco = listaItem.get(indice).preco;
 		return preco;
-	}
-	
-	/**
-	 * Faz uma busca através do código e retorna o nome do item
-	 * @param codigo
-	 * @return
-	 */
-	public static String retornaNomesItens(String codigo) {
-		int indice = Integer.parseInt(codigo) - 1;
-		String nomeItem = Item.listaItem.get(indice).nome;
-		return nomeItem;
 	}
 	
 	/**
@@ -371,14 +316,6 @@ public class Item {
 	 */
 	public static void limpaListaItem() {
 		listaItem.clear();
-	}
-
-	public ArrayList<String> getListaProdutosQuantidades() {
-		return listaProdutosQuantidades;
-	}
-
-	public void setListaProdutosQuantidades(ArrayList<String> listaProdutosQuantidades) {
-		this.listaProdutosQuantidades = listaProdutosQuantidades;
 	}
 }
 

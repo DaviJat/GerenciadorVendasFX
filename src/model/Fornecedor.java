@@ -187,25 +187,5 @@ public class Fornecedor {
 		
 	}
 	
-	/**
-	 * Limpa lista de Fornecedor (Exclusiva para teste)
-	 */
-	public static void limpaLista() {
-		listaFornecedor.clear();
-	}
-	
-	/** 
-	 * Função que  retorna o nome do fornecedor buscando pelo código
-	 * @param codigo
-	 * @return
-	 */
-	public static String retornaNomeFornecedor(String codigoFornecedor) {
-		
-		int indice = Fornecedor.buscaFornecedor(codigoFornecedor);
-		
-		String nome = listaFornecedor.get(indice).nome;
-		
-		return nome;
-	}
 
 }
