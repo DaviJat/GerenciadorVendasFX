@@ -187,5 +187,12 @@ public class Fornecedor {
 		
 	}
 	
+	/**
+	 * Limpa lista de Fornecedor (Exclusiva para teste)
+	 */
+	public static void limpaLista() {
+		listaFornecedor.clear();
+	}
+	
 
 }

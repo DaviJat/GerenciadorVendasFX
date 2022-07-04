@@ -274,5 +274,12 @@ public class Venda {
 		
 		return validaVenda;
 	}
+	
+	/**
+	 * Limpa lista de Venda (Exclusiva para teste)
+	 */
+	public static void limpaListaVenda() {
+		listaVenda.clear();
+	}
 }
 

@@ -203,4 +203,11 @@ public class Usuario {
 		}
 		return false; 
 	}
+	
+	/**
+	 * Limpa lista de Usuário (Exclusiva para teste)
+	 */
+	public static void limpaListaUsuario() {
+		listaUsuario.clear();
+	}
 }

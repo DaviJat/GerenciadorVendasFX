@@ -254,4 +254,11 @@ public class Produto {
     		indice ++;
     	}
 	}
+	
+	/**
+	 * Limpa lista de Produto (Exclusiva para teste)
+	 */
+	public static void limpaListaProduto() {
+		listaProduto.clear();
+	}
 }

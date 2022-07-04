@@ -206,5 +206,12 @@ public class Cliente {
 		return validaCliente;
 		
 	}
+	
+	/**
+	 * Limpa lista de Clientes (Exclusiva para teste)
+	 */
+	public static void limpaListaCliente() {
+		listaCliente.clear();
+	}
 
 }
