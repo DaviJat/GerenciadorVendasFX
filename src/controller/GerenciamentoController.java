@@ -105,8 +105,14 @@ public class GerenciamentoController {
     }
     
     @FXML
-    void abrirMenuRelatorios(ActionEvent event) {
-
+    void abrirMenuRelatorios(ActionEvent event) throws IOException {
+    	Object root = FXMLLoader.load(getClass().getResource("/view/RelatorioMenuView.fxml"));
+    	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene((Parent) root);
+        stage.setTitle("Menu Relatórios");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
     
     @FXML

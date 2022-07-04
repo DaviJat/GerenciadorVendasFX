@@ -138,15 +138,9 @@ public class Geral {
 	 * @param b
 	 * @return
 	 */
-	public static boolean comparaData(String a , String b) {
+	public static boolean comparaData(LocalDate a , LocalDate b) {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu");
-
-        LocalDate c = LocalDate.parse(a,formatter);
-
-        LocalDate d = LocalDate.parse(b,formatter);
-
-        if(c.isAfter(d)) {
+        if(a.isAfter(b)) {
             return true;
         }
         return false;
