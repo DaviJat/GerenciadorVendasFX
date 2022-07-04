@@ -13,6 +13,11 @@ import javafx.stage.Stage;
 import model.Geral;
 import model.Venda;
 
+/**
+ * Classe Controller da Edição de Venda
+ * @author Davi
+ *
+ */
 public class VendaEdicaoController {
 
     @FXML
@@ -60,6 +65,10 @@ public class VendaEdicaoController {
     @FXML
     private Label msgErroPreco;
 
+    /**
+     * Pega o código da venda digitado pelo usuário, habilita e preenche os inputs com os dados da venda, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoVenda(ActionEvent event) {
     	
@@ -109,7 +118,11 @@ public class VendaEdicaoController {
     	}
     	
     }
-
+    
+    /**
+     * Verifica se todos os inputs foram preenchidos, e salva as alterações feitas na venda
+     * @param event
+     */
     @FXML
     void salvaCadastroVenda(ActionEvent event) {
     	

@@ -15,16 +15,39 @@ import model.Geral;
 import model.Item;
 import model.Produto;
 
+/**
+ * Classe Controller do Cadastro de Venda
+ * @author Davi
+ *
+ */
 public class VendaCadastroController {
 	
+	/**
+	 * Valor inicial do código do cliente
+	 */
 	static int contadorCodigo = 0;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
 	
+	/**
+	 * Lista com os objetos (Item) que vão compor as vendas
+	 */
 	ArrayList<Item> listaItens = new ArrayList<Item>();
+	
+	/**
+	 * Lista com o nome dos Itens
+	 */
 	ArrayList<String> listaNomesItens = new ArrayList<String>();
+	
+	/**
+	 * Variável para compor o valor da venda, que terá seu valor inserido automaticamente através da soma do preço de todos os
+	 * Itens da venda
+	 */
 	double precoTotal;
 
     @FXML
@@ -84,6 +107,9 @@ public class VendaCadastroController {
     @FXML
     private Label msgErroPreco;
     
+    /**
+     * Reinicia os dados utilizados no cadastro, para não pegar os dados de uma venda anterior 
+     */
     @FXML
     public void initialize() {
     	listaNomesItens.clear();
@@ -91,7 +117,13 @@ public class VendaCadastroController {
     	precoTotal = 0;
     	inputPrecoCadastro.setText("0.00");
     }
-
+    
+    /**
+     * Recebe o código de um item para adicionar a venda, após validar, vasculha a lista de produtos e altera o valor do seu estoque
+     * com base nos produtos do item, ao adicionar esse item a venda a quantidade do produto no estoque é removido, não sendo recomendado
+     * fechar a tela sem salvar a venda.
+     * @param event
+     */
     @FXML
     void adicionarItem(ActionEvent event) {
     	
@@ -161,7 +193,10 @@ public class VendaCadastroController {
 		}
 	}
     	
-
+    /**
+     * Pesquisa o código do cliente que vai ser associado a venda, valida, e retorna o nome desse cliente
+     * @param event
+     */
     @FXML
     void pesquisarCodigoCliente(ActionEvent event) {
     	
@@ -183,7 +218,11 @@ public class VendaCadastroController {
     	}
     	
     }
-
+    
+    /**
+     * Pesquisa o código do item que vai ser adicionado a venda, valida, e retorna o nome desse item
+     * @param event
+     */
     @FXML
     void pesquisarCodigoItem(ActionEvent event) {
     	
@@ -205,7 +244,11 @@ public class VendaCadastroController {
     	}
     	
     }
-
+    
+    /**
+     * Verifica se os inputs foram preenchidos e validados gera um código e cadastra uma nova venda
+     * @param event
+     */
     @FXML
     void salvaRegistroVenda(ActionEvent event) {
     	

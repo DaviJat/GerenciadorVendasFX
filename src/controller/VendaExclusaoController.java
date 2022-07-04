@@ -8,6 +8,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Venda;
 
+/**
+ * Classe Controller da Exclusão de Venda
+ * @author Davi
+ *
+ */
 public class VendaExclusaoController {
 
     @FXML
@@ -21,7 +26,11 @@ public class VendaExclusaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Exclui a Venda através do código digitado pelo usuário, se for um código válido
+     * @param event
+     */
     @FXML
     void excluirUsuario(ActionEvent event) {
     	

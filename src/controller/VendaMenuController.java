@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Venda;
 
+/**
+ * Classe Controller do Menu de Vendas
+ * @author Davi
+ *
+ */
 public class VendaMenuController {
 
 	@FXML
@@ -60,6 +65,9 @@ public class VendaMenuController {
     
     ObservableList<Venda> listaVendas = FXCollections.observableArrayList(Venda.getListaVenda());
     
+    /**
+     * Insere as Vendas na tabela na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -73,7 +81,11 @@ public class VendaMenuController {
 
         tabelaVendas.setItems(listaVendas);
     }
-
+    
+    /**
+     * Atualizada Tabela de Vendas
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	
@@ -91,7 +103,12 @@ public class VendaMenuController {
 
         tabelaVendas.setItems(listaVendas);
     }
-
+    
+    /**
+     * Volta para o menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
@@ -102,7 +119,12 @@ public class VendaMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de edição de Venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void editarVenda(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/VendaEdicaoView.fxml"));
@@ -113,7 +135,12 @@ public class VendaMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Exclusão de Venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirVenda(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/VendaExclusaoView.fxml"));
@@ -124,7 +151,12 @@ public class VendaMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de registro de Venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void registrarVenda(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/VendaCadastroView.fxml"));
