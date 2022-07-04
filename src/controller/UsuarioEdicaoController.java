@@ -13,6 +13,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Usuario;
 
+/**
+ * Classe Controller da Edição de Usuários
+ * @author Davi
+ *
+ */
 public class UsuarioEdicaoController {
 	
 	ObservableList<String> listaCargos = FXCollections.observableArrayList("Gerente", "Funcionário");
@@ -50,13 +55,20 @@ public class UsuarioEdicaoController {
     @FXML
     private Label msgErro;
     
+    /**
+     * Carrega os cargos de Usuário para preencher a choice box, na inicialização da tela
+     */
     @FXML
     void initialize() {
     	
     	selectCargoEdicao.setItems(listaCargos);
     	
     }
-
+    
+    /**
+     * Pega o código do usuario digitado pelo usuário, habilita e preenche os inputs com os dados do usuario, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoUsuario(ActionEvent event) {
     	
@@ -97,6 +109,10 @@ public class UsuarioEdicaoController {
     	}
     }
 
+    /**
+     * Verifica se todos os inputs foram preenchidos, e salva as alterações feitas no usuário
+     * @param event
+     */
     @FXML
     void salvaEdicaoUsuario(ActionEvent event) {
     	

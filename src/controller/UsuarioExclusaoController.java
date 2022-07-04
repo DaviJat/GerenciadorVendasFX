@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Usuario;
 
+/**
+ * Classe Controller da Exclusão de Usuários
+ * @author Davi
+ *
+ */
 public class UsuarioExclusaoController {
 	
 	@FXML
@@ -29,7 +34,11 @@ public class UsuarioExclusaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Exclui o Usuário através do código digitado pelo usuário, se for um código válido
+     * @param event
+     */
     @FXML
     void excluirUsuario(ActionEvent event) {
     	
@@ -45,7 +54,11 @@ public class UsuarioExclusaoController {
     	}
 
     }
-
+   
+    /**
+     * Valida o código de Usuário inserido pelo usuário, retorna o nome do Usuário, e desbloqueia o botão de excluir, se o código digitado for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoUsuario(ActionEvent event) {
     	

@@ -10,10 +10,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Classe Controller do Cadastro de Usuários
+ * @author Davi
+ *
+ */
 public class UsuarioCadastroController {
 	
+	/**
+	 * Valor inicial do código do cliente
+	 */
 	static int contadorCodigo = 1;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
@@ -35,6 +46,9 @@ public class UsuarioCadastroController {
     @FXML
     private Label msgErro;
     
+    /**
+     * Carrega os cargos de Usuário para preencher a choice box, na inicialização da tela
+     */
     @FXML
     void initialize() {
     	
@@ -42,6 +56,10 @@ public class UsuarioCadastroController {
     	
     }
     
+    /** 
+     * Verifica se os dados foram preenchidos e salva o novo Usuário
+     * @param event
+     */
     @FXML
     void salvaCadastroUsuario(ActionEvent event) {
     	

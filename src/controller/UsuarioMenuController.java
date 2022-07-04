@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Usuario;
 
+/**
+ * Classe Controller do Menu de Usuários
+ * @author Davi
+ *
+ */
 public class UsuarioMenuController{
 	
 	@FXML
@@ -48,6 +53,9 @@ public class UsuarioMenuController{
     
     ObservableList<Usuario> listaUsuarios = FXCollections.observableArrayList(Usuario.getListaUsuario());
     
+    /**
+     * Insere os Usuários na tabela na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -58,6 +66,11 @@ public class UsuarioMenuController{
         tabelaUsuarios.setItems(listaUsuarios);
     }
     
+    /**
+     * Abre tela de Cadastro de Usuários
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void cadastrarUsuario(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/UsuarioCadastroView.fxml"));
@@ -68,7 +81,12 @@ public class UsuarioMenuController{
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Edição de Usuários
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void editarUsuario(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/UsuarioEdicaoView.fxml"));
@@ -79,7 +97,12 @@ public class UsuarioMenuController{
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Exclusão de Usuários
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirUsuario(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/UsuarioExclusaoView.fxml"));
@@ -91,6 +114,10 @@ public class UsuarioMenuController{
         stage.show();
     }
     
+    /**
+     * Atualiza tabela de Usuários
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	listaUsuarios.clear();
@@ -105,6 +132,11 @@ public class UsuarioMenuController{
     	
     }
     
+    /** 
+     * Volta para o menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
