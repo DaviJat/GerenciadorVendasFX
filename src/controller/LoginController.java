@@ -14,7 +14,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Usuario;
 
-
+/**
+ * Classe Controller da tela de Login
+ * @author Davi
+ *
+ */
 public class LoginController {
 	
 	@FXML
@@ -30,7 +34,12 @@ public class LoginController {
     private Label msgErro;
     
     public static String usuarioLogado; 
-
+    
+    /**
+     * Verifica se os valores de usuário inseridos no login realmente estão cadastrados
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void login(ActionEvent event) throws IOException {
     	

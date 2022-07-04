@@ -14,6 +14,11 @@ import model.Fornecedor;
 import model.Geral;
 import model.Produto;
 
+/**
+ * Classe Controller da Edição de Produtos
+ * @author Davi
+ *
+ */
 public class ProdutoEdicaoController {
 
     @FXML
@@ -81,7 +86,11 @@ public class ProdutoEdicaoController {
 
     @FXML
     private Label msgErroValidade;
-
+    
+    /**
+     * Valida o código do Fornecedor inserido pelo usuário
+     * @param event
+     */
     @FXML
     void pesquisarCodigoFornecedor(ActionEvent event) {
     	
@@ -103,7 +112,11 @@ public class ProdutoEdicaoController {
     	}
 
     }
-
+    
+    /**
+     * Pega o código do produto digitado pelo usuário, habilita e preenche os inputs com os dados do produto, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoProduto(ActionEvent event) {
     	
@@ -161,7 +174,11 @@ public class ProdutoEdicaoController {
     	}
     	
     }
-
+    
+    /**
+     * Verifica se todos os inputs foram preenchidos, e salva as alterações feitas no produto
+     * @param event
+     */
     @FXML
     void salvaCadastroProduto(ActionEvent event) {
     	

@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Fornecedor;
 
+/**
+ * Classe Controller da Edição de Fornecedores
+ * @author Davi
+ *
+ */
 public class FornecedorEdicaoController {
 	
 	@FXML
@@ -44,7 +49,11 @@ public class FornecedorEdicaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Valida o código de fornecedor inserido, e habilita os inputs e preenche com os dados do fornecedor, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoFornecedor(ActionEvent event) {
     	
@@ -85,7 +94,11 @@ public class FornecedorEdicaoController {
     	}
 
     }
-
+    
+    /**
+     * Verifica se todos os inputs foram preenchidos, e salva as alterações feitas no fornecedor
+     * @param event
+     */
     @FXML
     void salvaEdicaoFornecedor(ActionEvent event) {
     	

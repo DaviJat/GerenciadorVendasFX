@@ -11,14 +11,36 @@ import javafx.stage.Stage;
 import model.Geral;
 import model.Produto;
 
+/**
+ * Classe Controller do Cadastro de Itens
+ * @author Davi
+ *
+ */
 public class ItemCadastroController {
 	
+	/**
+	 * Lista com os objetos(produtos) salvos em cada objeto da Classe Item
+	 */
 	ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
+	
+	/**
+	 * Lista com a Quantidades dos produtos salvos no objeto da Classe Item
+	 */
 	ArrayList<String> listaQuantidades = new ArrayList<String>();
+	
+	/**
+	 * Lista que armazena Texto unindo o nome do produto e sua quantidade (Utilizado para preencher a coluna de Produtos da tabela de Itens)
+	 */
 	ArrayList<String> listaProdutosQuantidades = new ArrayList<String>();
 	
+	/**
+	 * Valor inicial do código do item
+	 */
 	static int contadorCodigo = 0;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
@@ -68,12 +90,20 @@ public class ItemCadastroController {
     @FXML
     private Label msgErroQuantidade;
     
+    /**
+     * Limpa as listas para não puxar valores de cadastros de itens anteriores
+     */
     @FXML
     public void initialize() {
         listaProdutos.clear();
         listaQuantidades.clear();
     }
 
+    /**
+     * Verifica se os inputs foram preenchidos e se o código do produto é válido, com isso insere o produto na lista de produtos do Item
+     * e a quantidade necessária desse produto na confecção do item
+     * @param event
+     */
     @FXML
     void adicionarProduto(ActionEvent event) {
     	
@@ -124,7 +154,11 @@ public class ItemCadastroController {
     	
     	
     }
-
+    
+    /**
+     * Pesquisa o código do produto, válida, e mostra o nome do produto para o usuário verificar
+     * @param event
+     */
     @FXML
     void pesquisarCodigoProduto(ActionEvent event) {
     	
@@ -146,7 +180,12 @@ public class ItemCadastroController {
     	}
     	
     }
-
+    
+    /**
+     * Salva o cadastro do item se os inputs forem preenchidos corretamentes, e se for adicionado pelo menos um produto
+     * na composição desse Item
+     * @param event
+     */
     @FXML
     void salvaCadastroItem(ActionEvent event) {
     	

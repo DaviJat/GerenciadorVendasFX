@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Fornecedor;
 
+/**
+ * Classe Controller do Menu de Fornecedores
+ * @author Davi
+ *
+ */
 public class FornecedorMenuController {
 	
 	@FXML
@@ -51,6 +56,9 @@ public class FornecedorMenuController {
     
     ObservableList<Fornecedor> listaFornecedores = FXCollections.observableArrayList(Fornecedor.getListaFornecedor());
     
+    /**
+     * Insere os Fornecedores na tabela na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -61,7 +69,11 @@ public class FornecedorMenuController {
 
         tabelaFornecedores.setItems(listaFornecedores);
     }
-
+    
+    /**
+     * Atualiza tabela de Fornecedores
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	listaFornecedores.clear();
@@ -75,7 +87,12 @@ public class FornecedorMenuController {
     	
         tabelaFornecedores.setItems(listaFornecedores);
     }
-
+    
+    /**
+     * Volta para a tela de Menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
@@ -86,7 +103,12 @@ public class FornecedorMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Cadastro de Fornecedores
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void cadastrarFornecedor(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorCadastroView.fxml"));
@@ -97,7 +119,12 @@ public class FornecedorMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Edição de Fornecedores
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void editarFornecedor(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorEdicaoView.fxml"));
@@ -108,7 +135,12 @@ public class FornecedorMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Exclusão de Fornecedores
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirFornecedor(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/FornecedorExclusaoView.fxml"));

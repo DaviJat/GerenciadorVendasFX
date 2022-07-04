@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Produto;
 
+/**
+ * Classe Controller do Menu de Produtos
+ * @author Davi
+ *
+ */
 public class ProdutoMenuController {
 	
 	@FXML
@@ -57,6 +62,9 @@ public class ProdutoMenuController {
     
     ObservableList<Produto> listaProdutos = FXCollections.observableArrayList(Produto.getListaProduto());
     
+    /**
+     * Carrega tabela de produtos com os dados salvos, logo na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -69,7 +77,11 @@ public class ProdutoMenuController {
 
         tabelaProdutos.setItems(listaProdutos);
     }
-
+    
+    /**
+     * Atualiza tabela de Produtos
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	
@@ -86,7 +98,12 @@ public class ProdutoMenuController {
     	
         tabelaProdutos.setItems(listaProdutos);
     }
-
+    
+    /**
+     * Abre tela de Cadastro de Produtos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void cadastrarProduto(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ProdutoCadastroView.fxml"));
@@ -97,7 +114,12 @@ public class ProdutoMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Edição de Produtos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void editarProduto(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ProdutoEdicaoView.fxml"));
@@ -108,7 +130,12 @@ public class ProdutoMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Exclusão de Produtos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirProduto(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ProdutoExclusaoView.fxml"));
@@ -120,6 +147,11 @@ public class ProdutoMenuController {
         stage.show();
     }
     
+    /**
+     * Volta para o menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));

@@ -84,6 +84,10 @@ public class RelatorioMenuController {
     @FXML
     private Label msgErro;
     
+    /**
+     * Gera relatório de Estoque Geral
+     * @param event
+     */
     @FXML
     void gerarRelatorioEstoqueGeral(ActionEvent event) {
     	
@@ -127,6 +131,10 @@ public class RelatorioMenuController {
     	
     }
 
+    /**
+     * Gera o relatório de estoque do/dos produto/produtos com o nome igual ao nome digitado pelo usuário
+     * @param event
+     */
     @FXML
     void gerarRelatorioEstoquePorProduto(ActionEvent event) {
     	
@@ -177,7 +185,11 @@ public class RelatorioMenuController {
        }
 
     }
-
+    
+    /**
+     * Gera Relatório de Estoque ordenando os produtos pela data de Validade
+     * @param event
+     */
     @FXML
     void gerarRelatorioEstoquePorValidade(ActionEvent event) {
     	
@@ -215,7 +227,11 @@ public class RelatorioMenuController {
 	     msgErro.setText("Relatório gerado");
 
     }
-
+    
+    /**
+     * Gera relatório com todos os Fornecedores
+     * @param event
+     */
     @FXML
     void gerarRelatorioFornecedoresGeral(ActionEvent event) {
     	
@@ -252,7 +268,11 @@ public class RelatorioMenuController {
        msgErro.setText("Relatório gerado");
     	
     }
-
+    
+    /**
+     * Gera relatório com os fonecedores que fornecem o produto especificado pelo usuário
+     * @param event
+     */
     @FXML
     void gerarRelatorioFornecedoresPorProduto(ActionEvent event) {
     	
@@ -302,7 +322,11 @@ public class RelatorioMenuController {
     		}
 
     }
-
+    
+    /**
+     * Gera relatório de vendas no geral
+     * @param event
+     */
     @FXML
     void gerarRelatorioVendasGeral(ActionEvent event) {
     	
@@ -343,6 +367,10 @@ public class RelatorioMenuController {
     	
     }
 
+    /**
+     * Gera relatório apenas com as vendas que possuem itens da categoria digitada pelo usuário
+     * @param event
+     */
     @FXML
     void gerarRelatorioVendasPorCategoria(ActionEvent event) {
     	
@@ -413,7 +441,11 @@ public class RelatorioMenuController {
     	}
     	
     }
-
+    
+    /**
+     * Gera relatório de Vendas feitas no período digitado pelo usuário
+     * @param event
+     */
     @FXML
     void gerarRelatorioVendasPorPeriodo(ActionEvent event) {
     	
@@ -481,6 +513,10 @@ public class RelatorioMenuController {
     	
     }
     
+    /**
+     * Gera nota fiscal da venda com o código digitado pelo usuário
+     * @param event
+     */
     @FXML
     void gerarNotaFiscal(ActionEvent event) {
     	
@@ -537,6 +573,11 @@ public class RelatorioMenuController {
 
     }
     
+    /**
+     * Volta para a tela de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void voltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
@@ -550,6 +591,11 @@ public class RelatorioMenuController {
 
 }
 
+/**
+ * Classe auxiliar para ordenação das datas de validade
+ * @author Davi
+ *
+ */
 class validadeComparator implements Comparator<Produto> {
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu");

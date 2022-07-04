@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Cliente;
 
+/**
+ * Classe Controller da Exclusão de Clientes
+ * @author Davi
+ *
+ */
 public class ClienteExclusaoController {
 
     @FXML
@@ -29,7 +34,11 @@ public class ClienteExclusaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Exclui o Cliente através do código digitado pelo usuário, se for um código válido
+     * @param event
+     */
     @FXML
     void excluirCliente(ActionEvent event) {
     	
@@ -45,7 +54,11 @@ public class ClienteExclusaoController {
     	}
 
     }
-
+    
+    /**
+     * Valida o código de Cliente inserido pelo usuário, retorna o nome do Cliente, e desbloqueia o botão de excluir, se o código digitado for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoCliente(ActionEvent event) {
     	

@@ -7,10 +7,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Classe Controller do Cadastro de Clientes
+ * @author Davi
+ *
+ */
 public class ClienteCadastroController {
 	
+	/**
+	 * Valor inicial do código do cliente
+	 */
 	static int contadorCodigo = 0;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
@@ -32,7 +43,11 @@ public class ClienteCadastroController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Verifica se os inputs foram preenchidos gera um código e cadastra um novo cliente 
+     * @param event
+     */
     @FXML
     void salvaCadastroCliente(ActionEvent event) {
     	

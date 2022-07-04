@@ -11,6 +11,11 @@ import javafx.stage.Stage;
 import model.Geral;
 import model.Item;
 
+/**
+ * Classe Controller da Edição de Itens
+ * @author Davi
+ *
+ */
 public class ItemEdicaoController {
 
 	@FXML
@@ -55,7 +60,10 @@ public class ItemEdicaoController {
     @FXML
     private Label msgErroPreco;
 
-
+    /**
+     * Pega o código do item digitado pelo usuário, habilita e preenche os inputs com os dados do cliente, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoItem(ActionEvent event) {
     	
@@ -103,7 +111,11 @@ public class ItemEdicaoController {
     	}
 
     }
-
+    
+    /**
+     * Verifica se os inputs foram preenchidos com valores válidos e salva o Item com os novos dados
+     * @param event
+     */
     @FXML
     void salvaCadastroItem(ActionEvent event) {
     	

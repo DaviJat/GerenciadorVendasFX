@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Item;
 
+/**
+ * Classe Controller da Exlusão de Itens
+ * @author Davi
+ *
+ */
 public class ItemExclusaoController {
 
     @FXML
@@ -29,7 +34,11 @@ public class ItemExclusaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Exclui o item com o código digitado pelo Usuário
+     * @param event
+     */
     @FXML
     void excluirProduto(ActionEvent event) {
     	
@@ -45,7 +54,11 @@ public class ItemExclusaoController {
     	}
 
     }
-
+    
+    /**
+     * Válida o código digitado pelo usuário, mostra o nome do item e habilita o botão de exclusão, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoItem(ActionEvent event) {
     	

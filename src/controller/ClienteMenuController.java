@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Cliente;
 
+/**
+ * Classe Controller do Menu de Clientes
+ * @author Davi
+ *
+ */
 public class ClienteMenuController {
 
     @FXML
@@ -54,6 +59,9 @@ public class ClienteMenuController {
     
     ObservableList<Cliente> listaClientes = FXCollections.observableArrayList(Cliente.getListaCliente());
     
+    /**
+     * Insere os Clientes na tabela na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -65,7 +73,10 @@ public class ClienteMenuController {
 
         tabelaCliente.setItems(listaClientes);
     }
-    
+    /**
+     * Atualiza tabela de Clientes
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	listaClientes.clear();
@@ -80,7 +91,12 @@ public class ClienteMenuController {
 
         tabelaCliente.setItems(listaClientes);
     }
-
+    
+    /**
+     * Volta para o Menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
@@ -91,7 +107,12 @@ public class ClienteMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Cadastro de Clientes
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void cadastrarCliente(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ClienteCadastroView.fxml"));
@@ -102,9 +123,14 @@ public class ClienteMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Edição de Clientes
+     * @param event
+     * @throws IOException
+     */
     @FXML
-    void editarUsuario(ActionEvent event) throws IOException {
+    void editarCliente(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ClienteEdicaoView.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene((Parent) root);
@@ -114,6 +140,11 @@ public class ClienteMenuController {
         stage.show();
     }
 
+    /**
+     * Abre tela de Exclusão de Clientes
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirCliente(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ClienteExclusaoView.fxml"));

@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Produto;
 
+/**
+ * Classe Controller da Exclusão de Produtos
+ * @author Davi
+ *
+ */
 public class ProdutoExclusaoController {
 
     @FXML
@@ -29,7 +34,11 @@ public class ProdutoExclusaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Exclui o produto com o código digitado
+     * @param event
+     */
     @FXML
     void excluirProduto(ActionEvent event) {
     	
@@ -45,7 +54,11 @@ public class ProdutoExclusaoController {
     	}
     	
     }
-
+    
+    /**
+     * Valida o código do produto, retorna o nome do produto e habilita o botão de exclusão, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoProduto(ActionEvent event) {
     	

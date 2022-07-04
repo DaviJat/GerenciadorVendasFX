@@ -1,7 +1,7 @@
 /***
 Autor: Davi Jatobá Galdino
 Componente Curricular: MI - Programação II
-Concluido em: 20/06/2022
+Concluido em: 03/07/2022
 Declaro que este código foi elaborado por mim de forma individual e não contêm nenhum
 trecho de código de outro colega ou de outro autor, tais como provindos de livros e
 apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
@@ -24,6 +24,7 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		

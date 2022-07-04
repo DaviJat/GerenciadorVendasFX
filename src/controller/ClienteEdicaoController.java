@@ -10,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Cliente;
 
+/**
+ * Classe controller da Edição de Clientes
+ * @author Davi
+ *
+ */
 public class ClienteEdicaoController {
 
     @FXML
@@ -50,7 +55,11 @@ public class ClienteEdicaoController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Pega o código do cliente digitado pelo usuário, habilita e preenche os inputs com os dados do cliente, se o código for válido
+     * @param event
+     */
     @FXML
     void pesquisarCodigoCliente(ActionEvent event) {
     	String codigo = inputCodigoEdicao.getText();
@@ -94,7 +103,11 @@ public class ClienteEdicaoController {
     	}
     	
     }
-
+    
+    /**
+     * Verifica se todos os inputs foram preenchidos, e salva as alterações feitas no cliente
+     * @param event
+     */
     @FXML
     void salvaEdicaoCliente(ActionEvent event) {
     	

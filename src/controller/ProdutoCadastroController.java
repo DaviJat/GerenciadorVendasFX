@@ -13,10 +13,21 @@ import javafx.stage.Stage;
 import model.Fornecedor;
 import model.Geral;
 
+/**
+ * Classe Controller do Cadastro de Produtos
+ * @author Davi
+ *
+ */
 public class ProdutoCadastroController {
 	
+	/**
+	 * Valor inicial do código do cliente
+	 */
 	static int contadorCodigo = 2;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
@@ -65,7 +76,11 @@ public class ProdutoCadastroController {
     
     @FXML
     private Label msgErroFornecedor;
-
+    
+    /**
+     * Valida o código do fornecedor ao qual o produto será associado, e mostra o nome para o Usuário verificar
+     * @param event
+     */
     @FXML
     void pesquisarCodigoFornecedor(ActionEvent event) {
     	
@@ -87,7 +102,11 @@ public class ProdutoCadastroController {
     	}
     	 
     }
-
+    
+    /**
+     * Valida os valores inseridos nos inputs, e cadastra o novo produto com os valores inseridos
+     * @param event
+     */
     @FXML
     void salvaCadastroProduto(ActionEvent event) {
     	

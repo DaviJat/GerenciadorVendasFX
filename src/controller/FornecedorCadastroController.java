@@ -7,10 +7,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Classe Controller do Cadastro de Fornecedores
+ * @author Davi
+ *
+ */
 public class FornecedorCadastroController {
 	
+	/**
+	 * Valor inicial do código do Fornecedor
+	 */
 	static int contadorCodigo = 2;
 	
+	/**
+	 * Gera o próximo código a ser utilizado no cadastro
+	 */
 	public static void geraCodigo() {
 		contadorCodigo ++;
 	}
@@ -29,7 +40,11 @@ public class FornecedorCadastroController {
 
     @FXML
     private Label msgErro;
-
+    
+    /**
+     * Verifica se os inputs foram preenchidos e cadastra um novo Fornecedor com os valores inseridos
+     * @param event
+     */
     @FXML
     void salvaCadastroFornecedor(ActionEvent event) {
     	

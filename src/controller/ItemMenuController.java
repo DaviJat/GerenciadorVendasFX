@@ -17,6 +17,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
 
+/**
+ * Classe Controller do Menu de Itens
+ * @author Davi
+ *
+ */
 public class ItemMenuController {
 
 	@FXML
@@ -57,6 +62,9 @@ public class ItemMenuController {
     
     ObservableList<Item> listaItens = FXCollections.observableArrayList(Item.getListaItem());
     
+    /**
+     * Carrega os valores da tabela de itens na inicialização da tela
+     */
     @FXML
     public void initialize() {
     	
@@ -69,7 +77,11 @@ public class ItemMenuController {
 
         tabelaItens.setItems(listaItens);
     }
-
+    
+    /**
+     * Atualiza tabela de Itens
+     * @param event
+     */
     @FXML
     void atualizarLista(ActionEvent event) {
     	
@@ -86,7 +98,12 @@ public class ItemMenuController {
 
         tabelaItens.setItems(listaItens);
     }
-
+    
+    /**
+     * Volta para o menu de Gerenciamentos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void bntVoltar(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/GerenciamentoView.fxml"));
@@ -97,7 +114,12 @@ public class ItemMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Cadastro de Itens
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void cadastrarItem(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ItemCadastroView.fxml"));
@@ -108,7 +130,12 @@ public class ItemMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de edição de Itens
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void editarItem(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ItemEdicaoView.fxml"));
@@ -119,7 +146,12 @@ public class ItemMenuController {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
+    /**
+     * Abre tela de Exlusão de Itens
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void excluirItem(ActionEvent event) throws IOException {
     	Object root = FXMLLoader.load(getClass().getResource("/view/ItemExclusaoView.fxml"));

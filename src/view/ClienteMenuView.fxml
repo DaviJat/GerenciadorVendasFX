@@ -19,7 +19,7 @@
          </columns>
       </TableView>
       <Button fx:id="btnCadastrarCliente" layoutX="79.0" layoutY="67.0" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="28.0" prefWidth="79.0" text="Cadastrar" />
-      <Button fx:id="btnEditarCliente" layoutX="171.0" layoutY="67.0" mnemonicParsing="false" onAction="#editarUsuario" prefHeight="28.0" prefWidth="79.0" text="Editar" />
+      <Button fx:id="btnEditarCliente" layoutX="171.0" layoutY="67.0" mnemonicParsing="false" onAction="#editarCliente" prefHeight="28.0" prefWidth="79.0" text="Editar" />
       <Button fx:id="btnExcluirCliente" layoutX="269.0" layoutY="67.0" mnemonicParsing="false" onAction="#excluirCliente" prefHeight="28.0" prefWidth="79.0" text="Exluir" />
       <Label layoutX="182.0" layoutY="14.0" text="Menu Clientes" textFill="#2b59bd">
          <font>
