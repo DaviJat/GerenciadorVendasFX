@@ -19,7 +19,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Scanner;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -57,6 +56,12 @@ public class RelatorioMenuController {
 
     @FXML
     private Button btnVendasPorPeriodo;
+    
+    @FXML
+    private Button btnNotaFiscal;
+    
+    @FXML
+    private TextField inputCodigoVenda;
 
     @FXML
     private Button btnVoltar;
@@ -312,12 +317,13 @@ public class RelatorioMenuController {
             
             for (Venda venda : Venda.listaVenda) {
     			   
-       			String texto = ("Codigo: " + venda.getCodigo() + 
-   			 				    " | Data: "                + venda.getData() +  
-   			 				    " | Hora: "                + venda.getHora() +  
-   			 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
-   			 				    " | Forma de Pagamento: "  + venda.getFormaPagamento() +
-   			 				    " | Itens: "               + venda.getListaNomesItensVenda());
+            	String texto = ("Codigo: " + venda.getCodigo() + 
+   						" | Cliente: "             + venda.getNomeCliente() +  
+	 				    " | Data: "                + venda.getData() +  
+	 				    " | Hora: "                + venda.getHora() +  
+	 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
+	 				    " | Forma de Pagamento: "  + venda.getFormaPagamento() +
+	 				    " | Itens: "               + venda.getListaNomesItensVenda());
        			
        			document.add(new Paragraph(texto));
              }
@@ -373,12 +379,13 @@ public class RelatorioMenuController {
 	        	   
 	               if (validaCategoria) {
 	   	               
-	               		String texto = ("Codigo: " + venda.getCodigo() + 
-		 				    " | Data: "                + venda.getData() +  
-		 				    " | Hora: "                + venda.getHora() +  
-		 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
-		 				    " | Forma de Pagamento: "  + venda.getFormaPagamento() +
-		 				    " | Itens: "               + venda.getListaNomesItensVenda());
+	            	   String texto = ("Codigo: " + venda.getCodigo() + 
+		   						" | Cliente: "             + venda.getNomeCliente() +  
+			 				    " | Data: "                + venda.getData() +  
+			 				    " | Hora: "                + venda.getHora() +  
+			 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
+			 				    " | Forma de Pagamento: "  + venda.getFormaPagamento() +
+			 				    " | Itens: "               + venda.getListaNomesItensVenda());
 	         			
 	                     document.add(new Paragraph(texto));
 	                     
@@ -437,6 +444,7 @@ public class RelatorioMenuController {
 		        	   if(Geral.comparaData(dataFinal, dataVenda) && Geral.comparaData(dataVenda, dataInicial)) {
 			               
 				   			String texto = ("Codigo: " + venda.getCodigo() + 
+				   						" | Cliente: "             + venda.getNomeCliente() +  
 					 				    " | Data: "                + venda.getData() +  
 					 				    " | Hora: "                + venda.getHora() +  
 					 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
@@ -471,6 +479,62 @@ public class RelatorioMenuController {
     		
     	}
     	
+    }
+    
+    @FXML
+    void gerarNotaFiscal(ActionEvent event) {
+    	
+        String codigoVenda = inputCodigoVenda.getText();
+        
+        boolean validaVenda = Facade.validaVenda(codigoVenda);
+    	
+    	if (codigoVenda != "" && validaVenda == true) {
+    	
+			Document document = new Document();
+		    
+		    try {
+		
+		        PdfWriter.getInstance(document, new FileOutputStream("NotaFicalVenda(" + codigoVenda + ").pdf"));
+		        document.open();
+		        
+		        document.add(new Paragraph("Nota Fiscal da Venda - " + codigoVenda));
+		        
+		        ArrayList<Venda> listaVendas = Venda.getListaVenda();
+		        
+		        int index = Facade.buscaVenda(codigoVenda);
+		        
+		        Venda venda = listaVendas.get(index);
+		     	  
+		        String texto = ("Codigo: " + venda.getCodigo() + 
+   						" | Cliente: "             + venda.getNomeCliente() +  
+	 				    " | Data: "                + venda.getData() +  
+	 				    " | Hora: "                + venda.getHora() +  
+	 				    " | Preço Total: R$"       + venda.getPrecoTotal() +  
+	 				    " | Forma de Pagamento: "  + venda.getFormaPagamento() +
+	 				    " | Itens: "               + venda.getListaNomesItensVenda());
+   			
+		        document.add(new Paragraph(texto));
+		        
+		    } catch(DocumentException de) {
+		 	   
+		        System.err.println(de.getMessage());
+		        
+		    } catch(IOException ioe) {
+		 	   
+		        System.err.println(ioe.getMessage());
+		    }
+		    
+		    document.close();
+		    msgErro.setText("");
+    		msgErro.setText("Nota Fiscal Gerada");
+		    
+    	} else {
+    		
+    		msgErro.setText("");
+    		msgErro.setText("Digite um código de venda válido");
+    		
+    	}
+
     }
     
     @FXML
