@@ -20,7 +20,7 @@
       <Pane layoutX="452.0" prefHeight="400.0" prefWidth="147.0" style="-fx-background-color: white;" />
       <TextField fx:id="inputUsuarioLogin" layoutX="213.0" layoutY="192.0" prefHeight="34.0" prefWidth="174.0" />
       <TextField fx:id="inputSenhaLogin" layoutX="213.0" layoutY="260.0" prefHeight="34.0" prefWidth="174.0" />
-      <Label layoutX="218.0" layoutY="174.0" text="Nome do Usuário:" textFill="WHITE" />
+      <Label layoutX="218.0" layoutY="174.0" text="Código do Usuário:" textFill="WHITE" />
       <Label layoutX="218.0" layoutY="242.0" text="Senha:" textFill="WHITE" />
       <Button fx:id="btnLogin" layoutX="256.0" layoutY="316.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #85CBFF;" text="Entrar" textFill="WHITE">
          <font>

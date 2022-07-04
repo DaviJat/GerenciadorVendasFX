@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioMenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioMenuController">
    <children>
       <Label layoutX="139.0" layoutY="27.0" text="Gerenciamento de Relatórios" textFill="#2b59bd">
          <font>
@@ -31,7 +31,7 @@
          </font>
       </Label>
       <Button fx:id="btnVendasGeral" layoutX="55.0" layoutY="120.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasGeral" text="Relatório Geral" />
-      <Button fx:id="btnVendasPorCategoria" layoutX="41.0" layoutY="383.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasPorCategoria" text="Filtrar por Categoria" />
+      <Button fx:id="btnVendasPorCategoria" layoutX="38.0" layoutY="383.0" mnemonicParsing="false" onAction="#gerarRelatorioVendasPorCategoria" text="Filtrar por Categoria" />
       <Button fx:id="brnEstoqueGeral" layoutX="253.0" layoutY="120.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoqueGeral" text="Relatório Geral" />
       <Button fx:id="btnFornecedoresGeral" layoutX="421.0" layoutY="120.0" mnemonicParsing="false" onAction="#gerarRelatorioFornecedoresGeral" text="Relatório de Fornecedores" />
       <Button fx:id="btnEstoquePorValidade" layoutX="242.0" layoutY="353.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoquePorValidade" text="Filtrar por Validade" />
@@ -46,12 +46,12 @@
       </Pane>
       <TextField fx:id="inputVendaCategoria" layoutX="26.0" layoutY="353.0" />
       <Label layoutX="31.0" layoutY="336.0" text="Categoria do Item:" />
-      <Label fx:id="msgErro" alignment="CENTER" layoutY="436.0" prefHeight="17.0" prefWidth="600.0" textAlignment="CENTER">
+      <Label fx:id="msgErro" alignment="CENTER" layoutY="473.0" prefHeight="17.0" prefWidth="600.0" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnVoltar" layoutX="533.0" layoutY="408.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button fx:id="btnVoltar" layoutX="531.0" layoutY="440.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
       <Pane layoutX="200.0" layoutY="171.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #2B59BD;">
          <children>
             <Button fx:id="btnEstoquePorProduto" layoutX="43.0" layoutY="91.0" mnemonicParsing="false" onAction="#gerarRelatorioEstoquePorProduto" text="Filtrar por Produto" />
@@ -64,9 +64,17 @@
             <Button fx:id="btnFornecedorPorProduto" layoutX="47.0" layoutY="91.0" mnemonicParsing="false" onAction="#gerarRelatorioFornecedoresPorProduto" text="Filtrar por Produto" />
             <TextField fx:id="inputFornecedorProduto" layoutX="30.0" layoutY="50.0" />
             <Label layoutX="36.0" layoutY="33.0" text="Nome do Produto:" textFill="WHITE" />
-            <Line endX="-12.0" endY="208.9000244140625" layoutX="12.0" layoutY="25.0" startX="-12.0" startY="-115.89997863769531" />
+            <Line endX="-12.0" endY="232.0" layoutX="12.0" layoutY="25.0" startX="-12.0" startY="-115.89997863769531" />
          </children>
       </Pane>
-      <Line endX="-12.0" endY="280.79998779296875" layoutX="212.0" layoutY="120.0" startX="-12.0" startY="-46.40000915527344" />
+      <Line endX="-12.0" endY="304.79998779296875" layoutX="212.0" layoutY="120.0" startX="-12.0" startY="-46.40000915527344" />
+      <Label layoutX="432.0" layoutY="326.0" text="NOTA DO CLIENTE:" textFill="#2b59bd">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputCodigoVenda" layoutX="418.0" layoutY="366.0" />
+      <Label layoutX="421.0" layoutY="350.0" text="Código da Venda:" />
+      <Button fx:id="btnNotaFiscal" layoutX="441.0" layoutY="399.0" mnemonicParsing="false" onAction="#gerarNotaFiscal" text="Gera nota fiscal" />
    </children>
 </Pane>

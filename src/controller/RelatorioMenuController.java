@@ -497,7 +497,7 @@ public class RelatorioMenuController {
 		        PdfWriter.getInstance(document, new FileOutputStream("NotaFicalVenda(" + codigoVenda + ").pdf"));
 		        document.open();
 		        
-		        document.add(new Paragraph("Nota Fiscal da Venda - " + codigoVenda));
+		        document.add(new Paragraph("Nota Fiscal da Venda (" + codigoVenda + ")"));
 		        
 		        ArrayList<Venda> listaVendas = Venda.getListaVenda();
 		        
