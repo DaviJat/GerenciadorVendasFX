@@ -14,6 +14,7 @@ import model.Cliente;
 import model.Geral;
 import model.Item;
 import model.Produto;
+import model.Venda;
 
 /**
  * Classe Controller do Cadastro de Venda
@@ -44,6 +45,8 @@ public class VendaCadastroController {
 	 */
 	ArrayList<String> listaNomesItens = new ArrayList<String>();
 	
+	ArrayList<Venda> listaVendas = Venda.getListaVenda();
+	
 	/**
 	 * Variável para compor o valor da venda, que terá seu valor inserido automaticamente através da soma do preço de todos os
 	 * Itens da venda
@@ -61,6 +64,9 @@ public class VendaCadastroController {
 
     @FXML
     private Button btnSalvar;
+    
+    @FXML
+    private Button btnRepetirVenda;
 
     @FXML
     private TextField inputCodigoClienteCadastro;
@@ -310,6 +316,19 @@ public class VendaCadastroController {
     	    
     	}
 
+    }
+    
+    @FXML
+    void repetirVenda(ActionEvent event) {
+    	Venda primeiraVenda = listaVendas.get(0);
+    	Venda novaVenda = (Venda)primeiraVenda.clonar();
+    	
+    	geraCodigo();
+		String codigo = Integer.toString(contadorCodigo);
+		novaVenda.setCodigo(codigo);
+		
+		Venda.registrar(novaVenda);
+    	
     }
 
 }

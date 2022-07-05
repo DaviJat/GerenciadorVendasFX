@@ -35,7 +35,7 @@ public class VendaMenuController {
 
     @FXML
     private Button btnRegistrarVenda;
-
+    
     @FXML
     private Button btnVoltar;
 

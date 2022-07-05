@@ -94,5 +94,6 @@
       </Label>
       <DatePicker fx:id="inputDataCadastro" editable="false" layoutX="45.0" layoutY="153.0" prefHeight="34.0" prefWidth="204.0" />
       <Label layoutX="279.0" layoutY="68.0" prefHeight="70.0" prefWidth="284.0" text="Atenção: Ao adicionar um item na venda,&#10;os   produtos    serão    automaticamente&#10;removidos do estoque" textAlignment="JUSTIFY" textFill="RED" />
+      <Button fx:id="btnRepetirVenda" layoutX="335.0" layoutY="325.0" mnemonicParsing="false" onAction="#repetirVenda" text="Repetir Venda" />
    </children>
 </Pane>

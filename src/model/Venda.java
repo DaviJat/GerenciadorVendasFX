@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Davi
  *
  */
-public class Venda {
+public class Venda implements Prototype{
 	
 	/**
 	 * Atributos da classe Venda
@@ -280,6 +280,12 @@ public class Venda {
 	 */
 	public static void limpaListaVenda() {
 		listaVenda.clear();
+	}
+	
+	@Override
+	public Prototype clonar() {
+		return new Venda(codigo, data, hora, precoTotal, formaPagamento, nomeCliente, listaNomesItensVenda, listaItensVenda);
+		
 	}
 }
 
